@@ -1,0 +1,46 @@
+body{
+   margin: 0;
+   padding:0;
+   font-family: 'Poppins', sans-serif;
+}
+.nav_bar_inside {
+   justify-content: space-between;
+   align-items: center;
+   text-align: center;
+}
+
+.nav_image {
+   height: 12vh;
+}
+
+
+.nav_shopping_bag{
+   margin-right: 15px;
+}
+
+.nav_heart{
+   margin-right:25px;
+}
+
+.nav_bar{
+   margin-left:15px;
+}
+.nav_image{
+   margin-left: 25px;
+}
+
+.search_mobile_input{
+   width:80vw;
+   font-weight:400;
+   font-size: medium;
+   padding-left:15px ;
+}
+
+.search_mobile{
+   padding-left:5px;
+   font-size: 18px;
+}
+.search_container_mobile,.search_inside_mobile{
+   width: 100%;
+   padding:5px;
+}
