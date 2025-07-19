@@ -16,32 +16,1479 @@
    <script src="https://cdn.tailwindcss.com"></script>
    <!--------Google Fonts---------->
    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+   <!-----------------Bootstarp-------------------->
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"></script>
 
 </head>
 
-<body>
+<body id="top">
+   <!-----------------------Popup Overlay FOR MOBILE AND LAPTOP---------------------->
+   <div id="entryPopup" class="fixed inset-0 bg-black/50 flex items-center justify-center z-50 hidden">
+      <div class="bg-white rounded-xl shadow-xl p-6 w-[90%] max-w-md relative text-center">
+
+         <!---------------js Close Button------------------------>
+         <button onclick="closePopup()"
+            class="absolute top-1 right-3 text-gray-500 hover:text-black text-xl">&times;</button>
+
+         <!--------------------Popup Content--------------------->
+         <img src="./image/popup.webp">
+         <h2 class="text-xl font-semibold mb-2 mt-2">Welcome to Nykaa Fashion!</h2>
+         <p class="text-sm text-gray-700">Enjoy your shopping experience.</p>
+
+      </div>
+   </div>
+   <!-----------------------Mobile NavBar------------------------------------>
    <nav>
-      <!-----------------------Mobile NavBar------------------------------------>
-      <div class="nav_bar_container bg-white md:hidden">
-         <div class="nav_bar_inside flex">
-            <h1 class="hidden bg-pink-500 text-white text-center text-2xl p-4">Tailwind is Working</h1><i
-               class="fa-solid fa-bars nav_bar" style="color: #0d0d0d;font-size: 23px;"></i><img
-               src="./image/images.png" class="nav_image">
-            <div><i class="fa-regular fa-heart nav_heart" style="color: #0d0d0d;font-size: 24px;"></i><i
-                  class="fa-solid fa-bag-shopping nav_shopping_bag" style="color: #080808;font-size: 23px;"></i>
+      <div class="nav_bar_container bg-white md:hidden fixed top-0 z-50">
+         <div class="nav_bar_inside  flex">
+            <h1 class="hidden bg-pink-500 text-white text-center text-2xl p-4">Tailwind is Working</h1>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+               stroke="currentColor" class="nav_bar size-7">
+               <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+
+            <img src="./image/images.png" class="nav_image">
+            <div>
+               <i class="fa-regular fa-heart nav_heart" style="color: #0d0d0d;font-size: 24px;"></i>
+
+               <i class="fa-solid fa-bag-shopping nav_shopping_bag" style="color: #080808;font-size: 23px;"></i>
             </div>
          </div>
       </div>
    </nav>
    <!------------------------Search Mobile--------------------------------------->
-   <div class="search_container_mobile bg-gray-200">
+   <div class="md:hidden search_container_mobile bg-gray-200 fixed top-0 z-50">
       <div class="search_inside_mobile bg-gray-200">
-         <i class="fa-solid fa-magnifying-glass search_mobile"
-            style="color: #939292;"></i>
-            <input type="text" placeholder="Search for styles, brands & more"
+         <i class="fa-solid fa-magnifying-glass search_mobile" style="color: #939292;"></i>
+         <input type="text" placeholder="Search for styles, brands & more"
             class="search_mobile_input bg-gray-200 outline-none">
       </div>
    </div>
+
+   <!------------------------Laptop Black NavBar---------------------------------------->
+   <div class="nav_bar_container bg-black sticky top-0 z-50">
+      <div class="nav_bar_inside_laptop flex hidden md:flex">
+
+         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="size-4 mobile">
+            <path stroke-linecap="round" stroke-linejoin="round"
+               d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
+         </svg>
+         <p class="app_para">App Download</p>
+
+         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="size-4 help">
+            <path stroke-linecap="round" stroke-linejoin="round"
+               d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z" />
+         </svg>
+         <p class="help_para">Help</p>
+      </div>
+   </div>
+   </nav>
+
+   <!---------------------------------Laptop NavBar------------------------------------>
+   <nav>
+      <div class="laptop_navbar_container hidden md:flex">
+         <div class="laptop_inside_section flex fixed top-4 bg-white">
+            <img src="./image/logolap.png" class="lap_logo_img">
+            <a class="hover:underline  hover:text-pink-900 font-semibold text-lg text-gray-800 [text-underline-offset:20px]"
+               href="">Women</a>
+            <a class="hover:underline hover:text-pink-900 font-semibold text-lg text-gray-800 [text-underline-offset:20px]"
+               href="">Men</a>
+            <a class="hover:underline hover:text-pink-900 font-semibold text-lg text-gray-800 [text-underline-offset:20px]"
+               href="">Kids</a>
+            <a class="hover:underline hover:text-pink-900 font-semibold text-lg text-gray-800 [text-underline-offset:20px]"
+               href="">Home</a>
+            <a class="hover:underline hover:text-pink-900 font-semibold text-lg text-gray-800 [text-underline-offset:20px]"
+               href="">All Brands</a>
+            <a class="hover:underline hover:text-pink-900 font-semibold text-lg text-gray-800 [text-underline-offset:20px]"
+               href="">More</a>
+
+            <!--------------------------------Search for laptop---------------------------->
+            <div class="search_laptop_container bg-gray-100 font-awesome flex">
+               <i class="fa-solid fa-magnifying-glass mt-1" style="color: #939292;"></i>
+               <input type="text" placeholder="Search for styles, brands & more"
+                  class="bg-gray-100 outline-none search_input_laptop">
+               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                  <path d="M12 9a3.75 3.75 0 1 0 0 7.5A3.75 3.75 0 0 0 12 9Z" />
+                  <path fill-rule="evenodd"
+                     d="M9.344 3.071a49.52 49.52 0 0 1 5.312 0c.967.052 1.83.585 2.332 1.39l.821 1.317c.24.383.645.643 1.11.71.386.054.77.113 1.152.177 1.432.239 2.429 1.493 2.429 2.909V18a3 3 0 0 1-3 3h-15a3 3 0 0 1-3-3V9.574c0-1.416.997-2.67 2.429-2.909.382-.064.766-.123 1.151-.178a1.56 1.56 0 0 0 1.11-.71l.822-1.315a2.942 2.942 0 0 1 2.332-1.39ZM6.75 12.75a5.25 5.25 0 1 1 10.5 0 5.25 5.25 0 0 1-10.5 0Zm12-1.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z"
+                     clip-rule="evenodd" />
+               </svg>
+            </div>
+            <!-----------------------Account & wishlist & cart for Laptop--------------------->
+            <div class="account_container px-5 flex font-semibold">
+               <p class="account">
+                  <i class="fa-regular fa-user px-2" style="color: #0d0d0d;"></i>
+                  Account
+               </p>
+               <p class="wish_list">
+                  <i class="fa-regular fa-heart px-2" style="color: #050505;"></i>
+                  Wishlist
+               </p>
+               <p class="cart flex">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                     <path fill-rule="evenodd"
+                        d="M7.5 6v.75H5.513c-.96 0-1.764.724-1.865 1.679l-1.263 12A1.875 1.875 0 0 0 4.25 22.5h15.5a1.875 1.875 0 0 0 1.865-2.071l-1.263-12a1.875 1.875 0 0 0-1.865-1.679H16.5V6a4.5 4.5 0 1 0-9 0ZM12 3a3 3 0 0 0-3 3v.75h6V6a3 3 0 0 0-3-3Zm-3 8.25a3 3 0 1 0 6 0v-.75a.75.75 0 0 1 1.5 0v.75a4.5 4.5 0 1 1-9 0v-.75a.75.75 0 0 1 1.5 0v.75Z"
+                        clip-rule="evenodd" />
+                  </svg>Cart
+               </p>
+            </div>
+         </div>
+      </div>
+   </nav>
+   <!----------------------------------laptop top image-------------------------------->
+   <div class="top_image_laptop_container hidden md:flex">
+      <img src="./image/lap_img_top.avif">
+   </div>
+
+   <!------------------First Horizontal Scroll Section------------------------------->
+   <div class="text_first_scroll overflow-x-auto hide-scrollbar scroll-smooth mt-[130px] md:mt-[10px]">
+      <div class="flex whitespace-nowrap gap-2 px-4 py-2">
+
+         <div class="w-[80px] md:min-w-[150px] flex-shrink-0 text-center">
+            <img src="./image/f1.avif" class="w-full rounded-xl" alt="Indian Wear">
+            <p class="md:font-semibold mt-2 md:text-sm font-medium">Indianwear</p>
+         </div>
+
+         <div class="w-[80px] md:min-w-[150px] flex-shrink-0 text-center">
+            <img src="./image/f2.avif" class="w-full rounded-xl" alt="">
+            <p class="md:font-semibold mt-2 md:text-sm font-medium">Westernwear</p>
+         </div>
+
+         <div class="w-[80px] md:min-w-[150px] flex-shrink-0 text-center">
+            <img src="./image/f3.jpg" class="w-full rounded-xl" alt="">
+            <p class="md:font-semibold mt-2 md:text-sm font-medium">Footwear</p>
+         </div>
+
+         <div class="w-[80px] md:min-w-[150px] flex-shrink-0 text-center">
+            <img src="./image/f4.avif" class="w-full rounded-xl" alt="">
+            <p class="md:font-semibold mt-2 md:text-sm font-medium">Lingerie</p>
+         </div>
+
+         <div class="w-[80px] md:min-w-[150px] flex-shrink-0 text-center">
+            <img src="./image/f5.jpg" class="w-full rounded-xl" alt="">
+            <p class="md:font-semibold mt-2 md:text-sm font-medium">Bags</p>
+         </div>
+
+         <div class="w-[80px] md:min-w-[150px] flex-shrink-0 text-center">
+            <img src="./image/f6.avif" class="w-full rounded-xl" alt="">
+            <p class="md:font-semibold mt-2 md:text-sm font-medium">Sports & Action</p>
+         </div>
+
+         <!----------------------------Show these only on larger screens--------------------------->
+         <div class="hidden md:inline-block min-w-[150px] flex-shrink-0 text-center">
+            <img src="./image/f8lap.avif" class="w-full rounded-xl md:h-[150px]" alt="">
+            <p class="md:font-semibold mt-2 md:text-sm font-medium">Watches</p>
+         </div>
+
+         <div class="hidden md:inline-block md:min-w-[150px] flex-shrink-0 text-center">
+            <img src="./image/f7.avif" class="w-full rounded-xl md:h-[150px]" alt="">
+            <p class="md:font-semibold mt-2 md:text-sm font-medium">Jewellery</p>
+         </div>
+
+         <div class="hidden md:inline-block min-w-[150px] flex-shrink-0 text-center">
+            <img src="./image/f9lap.avif" class="w-full rounded-xl md:h-[150px]" alt="">
+            <p class="md:font-semibold mt-2 md:text-sm font-medium">Sunglasses</p>
+         </div>
+
+         <div class="hidden md:inline-block min-w-[150px] flex-shrink-0">
+            <img src="./image/f10lap.avif" class="w-full rounded-xl md:h-[150px]" alt="">
+         </div>
+
+         <div class="hidden md:inline-block min-w-[150px] flex-shrink-0">
+            <img src="./image/f11lap.avif" class="w-full rounded-xl md:h-[150px]" alt="">
+         </div>
+
+         <div class="hidden md:inline-block min-w-[150px] flex-shrink-0">
+            <img src="./image/f12lap.avif" class="w-full rounded-xl md:h-[150px]" alt="">
+         </div>
+
+         <div class="hidden md:inline-block min-w-[150px] flex-shrink-0">
+            <img src="./image/f14lap.avif" class="w-full rounded-xl md:h-[150px]" alt="">
+         </div>
+
+         <div class="hidden md:inline-block min-w-[150px] flex-shrink-0">
+            <img src="./image/f15lap.avif" class="w-full rounded-xl md:h-[150px]" alt="">
+         </div>
+      </div>
+   </div>
+
+
+   <!-----------------------------Second Scroll----------------------->
+   <div class="md:hidden text_first_scroll overflow-x-auto hide-scrollbar scroll-smooth">
+      <div class="flex whitespace-nowrap gap-2 px-4 py-2">
+
+         <div class="w-[80px]  flex-shrink-0 text-center">
+            <img src="./image/f16.avif" class="w-full rounded-xl" alt="Indian Wear">
+            <p class="mt-2 md:text-sm font-medium">Indianwear</p>
+         </div>
+
+         <div class="w-[80px]  flex-shrink-0 text-center">
+            <img src="./image/f17.avif" class="w-full rounded-xl" alt="">
+            <p class="md:font-semibold mt-2 md:text-sm font-medium">Westernwear</p>
+         </div>
+
+         <div class="w-[80px] flex-shrink-0 text-center">
+            <img src="./image/f18.avif" class="w-full rounded-xl" alt="">
+            <p class="md:font-semibold mt-2 md:text-sm font-medium">Footwear</p>
+         </div>
+
+         <div class="w-[80px] flex-shrink-0 text-center">
+            <img src="./image/f7.avif" class="w-full rounded-xl" alt="">
+            <p class="mt-2 md:text-sm font-medium">Jewellery</p>
+         </div>
+
+         <div class="md:hidden w-[80px] flex-shrink-0 text-center">
+            <img src="./image/f8lap.avif" class="w-full rounded-xl md:h-[150px]" alt="">
+            <p class="md:font-semibold mt-2 md:text-sm font-medium">Watches</p>
+         </div>
+
+         <div class="md:hidden w-[80px] flex-shrink-0 text-center">
+            <img src="./image/f9lap.avif" class="w-full rounded-xl md:h-[150px]" alt="">
+            <p class="md:font-semibold mt-2 md:text-sm font-medium">Sunglasses</p>
+         </div>
+      </div>
+   </div>
+
+   <!-----------------------------Boostrap Sale Live Images Carousel Mobile view---------------------->
+   <div id="carouselExampleIndicators" class="carousel slide md:hidden mt-3 mb-4 z-10" data-ride="carousel">
+      <ol class="carousel-indicators">
+         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+         <div class="carousel-item active">
+            <img class="d-block w-100" src="./image/s1.gif" alt="First slide">
+         </div>
+
+         <div class="carousel-item">
+            <img class="d-block w-100" src="./image/s3.gif" alt="Third slide">
+         </div>
+
+         <div class="carousel-item">
+            <img class="d-block w-100" src="./image/s6.webp" alt="Third slide">
+         </div>
+
+         <div class="carousel-item">
+            <img class="d-block w-100" src="./image/s7.webp" alt="Third slide">
+         </div>
+
+         <div class="carousel-item">
+            <img class="d-block w-100" src="./image/s2.avif" alt="Second slide">
+         </div>
+
+         <div class="carousel-item">
+            <img class="d-block w-100" src="./image/s4.avif" alt="Third slide">
+         </div>
+
+         <div class="carousel-item">
+            <img class="d-block w-100" src="./image/s5.avif" alt="Third slide">
+         </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+         <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+         <span class="carousel-control-next-icon" aria-hidden="true"></span>
+         <span class="sr-only">Next</span>
+      </a>
+   </div>
+
+   <!-----------------------------coupon for Mobile view---------------------------------------->
+   <div class="text_first_scroll overflow-x-auto hide-scrollbar scroll-smooth md:hidden">
+      <div class="flex whitespace-nowrap gap-2 px-4 py-2">
+
+         <div class="w-[250px] flex-shrink-0 text-center">
+            <img src="./image/coupon_mobile1.gif" class="w-full rounded-xl" alt="Indian Wear">
+         </div>
+
+         <div class="w-[250px] flex-shrink-0 text-center">
+            <img src="./image/coupon_mobile2.avif" class="w-full rounded-xl" alt="">
+         </div>
+
+         <div class="w-[250px] flex-shrink-0 text-center">
+            <img src="./image/coupon_mobile3.gif" class="w-full rounded-xl" alt="">
+         </div>
+
+         <div class="w-[250px] flex-shrink-0 text-center">
+            <img src="./image/coupon_mobile5.jpg" class="w-full rounded-xl" alt="">
+         </div>
+
+         <div class="w-[250px] flex-shrink-0 text-center">
+            <img src="./image/coupon_mobile6.avif" class="w-full rounded-xl" alt="">
+         </div>
+      </div>
+   </div>
+
+   <!------------------------------Sale Live Mobile view--------------------------->
+   <div class="sale_live md:hidden mt-3">
+      <img src="./image/salelive.gif">
+   </div>
+   <!------------------------------Dealzone Mobile view---------------------------->
+   <div class="dead_image md:hidden">
+      <img src="./image/dealzone.jpg">
+   </div>
+   <!----------------------Screen Shot Mobile view------------------------>
+   <div class="screen_shot md:hidden">
+      <img src="./image/ss.png">
+   </div>
+
+   <!-----------------------------Save Big scroll for mobile----------------------->
+   <div class="md:hidden text_first_scroll overflow-x-auto hide-scrollbar scroll-smooth bg-yellow-50">
+      <div class="flex whitespace-nowrap">
+
+         <div class="w-[120px]  flex-shrink-0 text-center">
+            <img src="./image/save_big1.webp" class="w-full rounded-xl" alt="Indian Wear">
+         </div>
+
+         <div class="w-[120px]  flex-shrink-0 text-center">
+            <img src="./image/save_big2.gif" class="w-full rounded-xl" alt="">
+         </div>
+
+         <div class="w-[120px] flex-shrink-0 text-center">
+            <img src="./image/save_big3.avif" class="w-full rounded-xl" alt="">
+         </div>
+
+         <div class="w-[120px] flex-shrink-0 text-center">
+            <img src="./image/save_big4.jpg" class="w-full rounded-xl" alt="">
+         </div>
+      </div>
+   </div>
+
+   <!------------------------------Rush Hour Sale Mobile view--------------------------->
+   <div class="rush_hour_sale md:hidden">
+      <img src="./image/rush_sale.gif">
+   </div>
+   <!---------------------------------Rush hour Sale first scroll Mobile view------------------------------>
+   <div class="md:hidden text_first_scroll overflow-x-auto hide-scrollbar scroll-smooth">
+      <div class="flex whitespace-nowrap gap-2 px-3">
+
+         <div class="w-[120px]  flex-shrink-0 text-center">
+            <img src="./image/rush_sale1.avif" class="w-full rounded-xl" alt="Indian Wear">
+         </div>
+
+         <div class="w-[120px]  flex-shrink-0 text-center">
+            <img src="./image/rush_sale2.avif" class="w-full rounded-xl" alt="">
+         </div>
+
+         <div class="w-[120px] flex-shrink-0 text-center">
+            <img src="./image/rush_sale3.avif" class="w-full rounded-xl" alt="">
+         </div>
+
+         <div class="w-[120px] flex-shrink-0 text-center">
+            <img src="./image/rush_sale4.avif" class="w-full rounded-xl" alt="">
+         </div>
+      </div>
+   </div>
+
+   <!---------------------------------Rush hour Sale second scroll Mobile view------------------------------>
+   <div class="md:hidden text_first_scroll overflow-x-auto hide-scrollbar scroll-smooth">
+      <div class="flex whitespace-nowrap gap-2 px-3 py-3">
+
+         <div class="w-[120px]  flex-shrink-0 text-center">
+            <img src="./image/rush_sale5.avif" class="w-full rounded-xl" alt="Indian Wear">
+         </div>
+
+         <div class="w-[120px]  flex-shrink-0 text-center">
+            <img src="./image/rush_sale6.avif" class="w-full rounded-xl" alt="">
+         </div>
+
+         <div class="w-[120px] flex-shrink-0 text-center">
+            <img src="./image/rush_sale7.avif" class="w-full rounded-xl" alt="">
+         </div>
+
+         <div class="w-[120px] flex-shrink-0 text-center">
+            <img src="./image/rush_sale8.avif" class="w-full rounded-xl" alt="">
+         </div>
+      </div>
+   </div>
+
+   <!--------------------------price crash mobile view------------------------------>
+   <div class="price_crash md:hidden">
+      <img src="./image/price crash.gif">
+   </div>
+   <!------------------------price crash image mobile view---------------------->
+   <div class="w-full h-64 bg-gradient-to-br from-black via-white to-[#ff0057]
+    flex items-center justify-center md:hidden">
+      <div class="flex whitespace-nowrap gap-3 p-2">
+
+         <div class="w-[165px]  flex-shrink-0">
+            <img src="./image/pricecrash1.avif" class="w-full rounded-xl" alt="Indian Wear">
+         </div>
+
+         <div class="w-[165px]  flex-shrink-0">
+            <img src="./image/pricecrash2.avif" class="w-full rounded-xl" alt="">
+         </div>
+      </div>
+   </div>
+
+   <!-------------------------------hot & Happening categories for mobile view------------------------>
+   <div class="hot_happening_mobile md:hidden ">
+      <img src="./image/hot_happening.webp">
+   </div>
+   <!----------------------Row 1 hot & Happening categories for mobile view------------------------>
+   <div class="w-full flex items-center justify-center md:hidden bg-red-100">
+      <div class="flex whitespace-nowrap gap-2 p-2">
+
+         <div class="w-[105px]  flex-shrink-0 text-center">
+            <img src="./image/hot_happening1.avif" class="w-full rounded-xl" alt="">
+            <p class="font-medium text-sm mb-2">Min 45% off</p>
+         </div>
+
+         <div class="w-[105px]  flex-shrink-0 text-center">
+            <img src="./image/hot_happening2.avif" class="w-full rounded-xl" alt="">
+            <p class="font-medium text-sm mb-2">Min 40% off</p>
+         </div>
+
+         <div class="w-[105px]  flex-shrink-0 text-center">
+            <img src="./image/hot_happening3.avif" class="w-full rounded-xl" alt="">
+            <p class="font-medium text-sm mb-2">Min 40% off</p>
+         </div>
+      </div>
+   </div>
+
+   <!----------------------Row 2 hot & Happening categories for mobile view------------------------>
+   <div class="w-full flex items-center justify-center md:hidden bg-red-100">
+      <div class="flex whitespace-nowrap gap-2">
+
+         <div class="w-[105px]  flex-shrink-0 text-center">
+            <img src="./image/hot_happening4.avif" class="w-full rounded-xl" alt="">
+            <p class="font-medium text-sm mb-2">Min 40% off</p>
+         </div>
+
+         <div class="w-[105px]  flex-shrink-0 text-center">
+            <img src="./image/hot_happening5.avif" class="w-full rounded-xl" alt="">
+            <p class="font-medium text-sm mb-2">Min 45% off</p>
+         </div>
+
+         <div class="w-[105px]  flex-shrink-0 text-center">
+            <img src="./image/hot_happening6.avif" class="w-full rounded-xl" alt="">
+            <p class="font-medium text-sm mb-2">Min 40% off</p>
+         </div>
+      </div>
+   </div>
+
+   <!----------------------Row 3 hot & Happening categories for mobile view------------------------>
+   <div class="w-full flex items-center justify-center md:hidden bg-red-100">
+      <div class="flex whitespace-nowrap gap-2 p-2 mb-2">
+
+         <div class="w-[105px]  flex-shrink-0 text-center">
+            <img src="./image/hot_happening7.avif" class="w-full rounded-xl" alt="">
+            <p class="font-medium text-sm mb-2">Min 40% off</p>
+         </div>
+
+         <div class="w-[105px]  flex-shrink-0 text-center">
+            <img src="./image/hot_happening8.jpg" class="w-full rounded-xl" alt="">
+            <p class="font-medium text-sm mb-2">Starting from<br>
+               ₹250</p>
+         </div>
+
+         <div class="w-[105px]  flex-shrink-0 text-center">
+            <img src="./image/hot_happening9.avif" class="w-full rounded-xl" alt="">
+            <p class="font-medium text-sm mb-2">Min 50% off</p>
+         </div>
+      </div>
+   </div>
+
+   <!------------------------hot lable mobile view head image--------------------->
+   <div class="hot_lable_mobile md:hidden">
+      <img src="./image/hot_label.jpg">
+   </div>
+   <!-------------hot lables mobile view---------------->
+   <div class="text_first_scroll overflow-x-auto hide-scrollbar 
+   scroll-smooth md:hidden bg-pink-50 py-3">
+      <div class="flex whitespace-nowrap gap-3 px-6">
+
+         <div class="w-[100px] flex-shrink-0 text-center">
+            <img src="./image/lables_hot1.avif" class="w-full" alt="Indian Wear">
+            <p class="md:font-semibold mt-2 md:text-lg font-medium">Up to 60% off</p>
+         </div>
+
+         <div class="w-[100px] flex-shrink-0 text-center">
+            <img src="./image/lables_hot2.avif" class="w-full" alt="">
+            <p class="md:font-semibold mt-2 md:text-lg font-medium">Min 55% off</p>
+         </div>
+
+         <div class="w-[100px] flex-shrink-0 text-center">
+            <img src="./image/lables_hot3.avif" class="w-full" alt="">
+            <p class="md:font-semibold mt-2 md:text-lg font-medium">Min 40% off</p>
+         </div>
+      </div>
+   </div>
+   <!-------------Row 1hot lables mobile view---------------->
+   <div class="text_first_scroll overflow-x-auto hide-scrollbar 
+   scroll-smooth md:hidden bg-pink-50 py-3">
+      <div class="flex whitespace-nowrap gap-3 px-6">
+
+         <div class="w-[100px] flex-shrink-0 text-center">
+            <img src="./image/lables_hot4.avif" class="w-full rounded-xl" alt="">
+            <p class="md:font-semibold mt-2 md:text-lg font-medium">Up to 75% off</p>
+         </div>
+
+         <div class="w-[100px] flex-shrink-0 text-center">
+            <img src="./image/lables_hot5.avif" class="w-full rounded-xl" alt="">
+            <p class="md:font-semibold mt-2 md:text-lg font-medium">Up to 50% off</p>
+         </div>
+
+         <div class="w-[100px] flex-shrink-0 text-center">
+            <img src="./image/lables_hot6.avif" class="w-full rounded-xl" alt="">
+            <p class="md:font-semibold mt-2 md:text-lg font-medium">Min 60% off</p>
+         </div>
+      </div>
+   </div>
+   <!-------------Row 2 hot lables mbile view---------------->
+   <div class="text_first_scroll overflow-x-auto hide-scrollbar 
+   scroll-smooth md:hidden bg-pink-50 py-3">
+      <div class="flex whitespace-nowrap gap-3 px-6">
+
+         <div class="w-[100px] flex-shrink-0 text-center">
+            <img src="./image/lables_hot7.avif" class="w-full rounded-xl" alt="">
+            <p class="md:font-semibold mt-2 md:text-lg font-medium">Min 50% off</p>
+         </div>
+
+         <div class="w-[100px] flex-shrink-0 text-center">
+            <img src="./image/lables_hot8.avif" class="w-full rounded-xl" alt="">
+            <p class="md:font-semibold mt-2 md:text-lg font-medium">Min 50% off</p>
+         </div>
+
+         <div class="w-[100px] flex-shrink-0 text-center">
+            <img src="./image/lables_hot9.avif" class="w-full rounded-xl" alt="">
+            <p class="md:font-semibold mt-2 md:text-lg font-medium">Up to 60% off</p>
+         </div>
+      </div>
+   </div>
+   <!-------------Row 3 hot lables mobile view---------------->
+   <div class="text_first_scroll overflow-x-auto hide-scrollbar 
+   scroll-smooth md:hidden bg-pink-50 py-3">
+      <div class="flex whitespace-nowrap gap-3 px-6">
+
+         <div class="w-[100px] flex-shrink-0 text-center">
+            <img src="./image/lables_hot10.avif" class="w-full rounded-xl" alt="">
+            <p class="md:font-semibold mt-2 md:text-lg font-medium">Up to 50% off</p>
+         </div>
+
+         <div class="w-[100px] flex-shrink-0 text-center">
+            <img src="./image/lables_hot11.avif" class="w-full rounded-xl" alt="">
+            <p class="md:font-semibold mt-2 md:text-lg font-medium">Min 40% off</p>
+         </div>
+
+         <div class="w-[100px] flex-shrink-0 text-center">
+            <img src="./image/lables_hot12.avif" class="w-full rounded-xl" alt="">
+            <p class="md:font-semibold mt-2 md:text-lg font-medium">Up to 60% off</p>
+         </div>
+      </div>
+   </div>
+
+   <!----------------------major price for mobile view------------------------->
+   <div class="major_price_mobile md:hidden">
+      <img src="./image/major_price.gif">
+   </div>
+   <!----------------------major price scrolling for mobile view------------------------->
+   <div class="text_first_scroll overflow-x-auto hide-scrollbar scroll-smooth mt-3">
+      <div class="flex whitespace-nowrap gap-4 px-4 py-2 md:hidden">
+
+         <div class="w-[120px] md:min-w-[150px] flex-shrink-0 text-center">
+            <img src="./image/major_price1.avif" class="w-full" alt="Indian Wear">
+         </div>
+
+         <div class="w-[120px] md:min-w-[150px] flex-shrink-0 text-center">
+            <img src="./image/major_price2.avif" class="w-full" alt="">
+         </div>
+
+         <div class="w-[120px] md:min-w-[150px] flex-shrink-0 text-center">
+            <img src="./image/major_price3.avif" class="w-full" alt="">
+         </div>
+
+         <div class="w-[120px] md:min-w-[150px] flex-shrink-0 text-center">
+            <img src="./image/major_price5.avif" class="w-full" alt="">
+         </div>
+
+         <div class="w-[120px] md:min-w-[150px] flex-shrink-0 text-center">
+            <img src="./image/major_price6.avif" class="w-full" alt="">
+         </div>
+
+         <div class="w-[120px] md:min-w-[150px] flex-shrink-0 text-center">
+            <img src="./image/major_price7.avif" class="w-full" alt="">
+         </div>
+
+         <div class="w-[120px] md:min-w-[150px] flex-shrink-0 text-center">
+            <img src="./image/major_price8.avif" class="w-full" alt="">
+         </div>
+
+         <div class="w-[120px] md:min-w-[150px] flex-shrink-0 text-center">
+            <img src="./image/major_price9.avif" class="w-full" alt="">
+         </div>
+
+         <div class="w-[120px] md:min-w-[150px] flex-shrink-0 text-center">
+            <img src="./image/major_price10.avif" class="w-full" alt="">
+         </div>
+
+         <div class="w-[120px] md:min-w-[150px] flex-shrink-0 text-center mb-3">
+            <img src="./image/major_price11.avif" class="w-full" alt="">
+         </div>
+      </div>
+   </div>
+
+
+
+
+
+   <!----------------------hot & Happening categories for laptop view------------------------>
+   <div class="hidden md:flex mt-2 bg-red-100 px-8">
+
+      <h1 class="hot_laptop">HOT & HAPPENING CATEGORIES</h1>
+   </div>
+
+   <div class="hot_laptop_second_para hidden md:flex bg-red-100 px-8">
+      <h1 class="hot_laptop_sec">Style steals you can’t resist</h1>
+   </div>
+
+   <div class="text_first_scroll overflow-x-auto hide-scrollbar 
+   scroll-smooth hidden md:flex bg-red-100 py-4">
+      <div class="flex whitespace-nowrap gap-2 px-8 py-2">
+
+         <div class="md:w-[200px] flex-shrink-0 text-center">
+            <img src="./image/hot_happening1.avif" class="w-full rounded-xl" alt="Indian Wear">
+            <p class="md:font-semibold mt-2 md:text-sm font-medium">Min 45% off</p>
+         </div>
+
+         <div class="md:w-[200px] flex-shrink-0 text-center">
+            <img src="./image/hot_happening2.avif" class="w-full rounded-xl" alt="">
+            <p class="md:font-semibold mt-2 md:text-sm font-medium">Min 40% off</p>
+         </div>
+
+         <div class="md:w-[200px] flex-shrink-0 text-center">
+            <img src="./image/hot_happening4.avif" class="w-full rounded-xl" alt="">
+            <p class="md:font-semibold mt-2 md:text-sm font-medium">Min 40% off</p>
+         </div>
+
+         <div class="md:w-[200px] flex-shrink-0 text-center">
+            <img src="./image/hot_happening5.avif" class="w-full rounded-xl" alt="">
+            <p class="md:font-semibold mt-2 md:text-sm font-medium">Min 45% off</p>
+         </div>
+
+         <div class="md:w-[200px] flex-shrink-0 text-center">
+            <img src="./image/hot_happening6.avif" class="w-full rounded-xl" alt="">
+            <p class="md:font-semibold mt-2 md:text-sm font-medium">Min 40% off</p>
+         </div>
+
+         <div class="md:w-[200px] flex-shrink-0 text-center">
+            <img src="./image/hot_happening7.avif" class="w-full rounded-xl" alt="">
+            <p class="md:font-semibold mt-2 md:text-sm font-medium">Min 40% off</p>
+         </div>
+
+         <div class="md:w-[200px] flex-shrink-0 text-center">
+            <img src="./image/hot_happening8.jpg" class="w-full rounded-xl" alt="">
+            <p class="md:font-semibold mt-2 md:text-sm font-medium">Starting From ₹250</p>
+         </div>
+
+         <div class="md:w-[200px] flex-shrink-0 text-center">
+            <img src="./image/hot_happening9.avif" class="w-full rounded-xl" alt="">
+            <p class="md:font-semibold mt-2 md:text-sm font-medium">Min 50% off</p>
+         </div>
+      </div>
+   </div>
+
+   <!----------------------HOT LABELS, HOTTER PRICES for laptop view------------------------>
+   <div class="hidden md:flex bg-pink-50 px-8">
+
+      <h1 class="hot_laptop">HOT LABELS, HOTTER PRICES</h1>
+   </div>
+   <div class="hot_laptop_second_para hidden md:flex bg-pink-50 px-8">
+      <h1 class="hot_laptop_sec">On never-seen-before offers</h1>
+   </div>
+   <div class="text_first_scroll overflow-x-auto hide-scrollbar 
+   scroll-smooth hidden md:flex bg-pink-50 py-4">
+      <div class="flex whitespace-nowrap gap-6 px-8 py-2">
+
+         <div class="md:w-[200px] flex-shrink-0 text-center">
+            <img src="./image/lables_hot1.avif" class="w-full rounded-xl" alt="Indian Wear">
+            <p class="md:font-semibold mt-2 md:text-lg font-medium">Up to 60% off</p>
+         </div>
+
+         <div class="md:w-[200px] flex-shrink-0 text-center">
+            <img src="./image/lables_hot2.avif" class="w-full rounded-xl" alt="">
+            <p class="md:font-semibold mt-2 md:text-lg font-medium">Min 55% off</p>
+         </div>
+
+         <div class="md:w-[200px] flex-shrink-0 text-center">
+            <img src="./image/lables_hot3.avif" class="w-full rounded-xl" alt="">
+            <p class="md:font-semibold mt-2 md:text-lg font-medium">Min 40% off</p>
+         </div>
+
+         <div class="md:w-[200px] flex-shrink-0 text-center">
+            <img src="./image/lables_hot4.avif" class="w-full rounded-xl" alt="">
+            <p class="md:font-semibold mt-2 md:text-lg font-medium">Up to 75% off</p>
+         </div>
+
+         <div class="md:w-[200px] flex-shrink-0 text-center">
+            <img src="./image/lables_hot5.avif" class="w-full rounded-xl" alt="">
+            <p class="md:font-semibold mt-2 md:text-lg font-medium">Up to 50% off</p>
+         </div>
+
+         <div class="md:w-[200px] flex-shrink-0 text-center">
+            <img src="./image/lables_hot6.avif" class="w-full rounded-xl" alt="">
+            <p class="md:font-semibold mt-2 md:text-lg font-medium">Min 60% off</p>
+         </div>
+
+         <div class="md:w-[200px] flex-shrink-0 text-center">
+            <img src="./image/lables_hot7.avif" class="w-full rounded-xl" alt="">
+            <p class="md:font-semibold mt-2 md:text-lg font-medium">Min 50% off</p>
+         </div>
+
+         <div class="md:w-[200px] flex-shrink-0 text-center">
+            <img src="./image/lables_hot8.avif" class="w-full rounded-xl" alt="">
+            <p class="md:font-semibold mt-2 md:text-lg font-medium">Min 50% off</p>
+         </div>
+
+         <div class="md:w-[200px] flex-shrink-0 text-center">
+            <img src="./image/lables_hot9.avif" class="w-full rounded-xl" alt="">
+            <p class="md:font-semibold mt-2 md:text-lg font-medium">Up to 60% off</p>
+         </div>
+
+         <div class="md:w-[200px] flex-shrink-0 text-center">
+            <img src="./image/lables_hot10.avif" class="w-full rounded-xl" alt="">
+            <p class="md:font-semibold mt-2 md:text-lg font-medium">Up to 50% off</p>
+         </div>
+
+         <div class="md:w-[200px] flex-shrink-0 text-center">
+            <img src="./image/lables_hot11.avif" class="w-full rounded-xl" alt="">
+            <p class="md:font-semibold mt-2 md:text-lg font-medium">Min 40% off</p>
+         </div>
+
+         <div class="md:w-[200px] flex-shrink-0 text-center">
+            <img src="./image/lables_hot12.avif" class="w-full rounded-xl" alt="">
+            <p class="md:font-semibold mt-2 md:text-lg font-medium">Up to 60% off</p>
+         </div>
+      </div>
+   </div>
+
+   <!----------------------Big Images for laptop view------------------------>
+   <div class="text_first_scroll overflow-x-auto hide-scrollbar 
+   scroll-smooth hidden md:flex py-4">
+      <div class="flex whitespace-nowrap gap-6 px-8 py-2">
+
+         <div class="md:w-[420px] flex-shrink-0 text-center">
+            <img src="./image/b1.avif" class="w-full" alt="">
+         </div>
+
+         <div class="md:w-[420px] flex-shrink-0 text-center">
+            <img src="./image/b3.avif" class="w-full" alt="">
+         </div>
+
+         <div class="md:w-[420px] flex-shrink-0 text-center">
+            <img src="./image/b2.avif" class="w-full" alt="">
+         </div>
+
+         <div class="md:w-[420px] flex-shrink-0 text-center">
+            <img src="./image/b4.avif" class="w-full" alt="">
+         </div>
+      </div>
+   </div>
+
+   <!--------------------------------laptop view ss----------------------------------->
+   <div class="big_ss hidden md:flex">
+      <img src="./image/bigss.png">
+   </div>
+   <div class="big_ss3 hidden md:flex">
+      <img src="./image/bigss4.png">
+   </div>
+
+   <!----------------------First ROW IN THE SPOTLIGHT for laptop view------------------------>
+   <div class="hidden md:flex px-16">
+
+      <h1 class="hot_laptop">IN THE SPOTLIGHT</h1>
+   </div>
+   <div class="hot_laptop_second_para hidden md:flex px-16">
+      <h1 class="hot_laptop_sec">Hottest brands on offer</h1>
+   </div>
+
+   <div class="text_first_scroll overflow-x-auto hide-scrollbar 
+   scroll-smooth hidden md:flex py-4">
+      <div class="flex whitespace-nowrap gap-6 px-16 py-2">
+
+         <div class="flex-shrink-0 md:w-[250px]">
+            <img src="./image/spotligght1.avif" class="w-full" alt="Indian Wear">
+            <p class="md:font-semibold mt-2 md:text-lg font-medium">Up to 50% off</p>
+            <p class="md:font-light md:text-lg font-medium">Stylish & elegant dresses</p>
+         </div>
+
+         <div class="flex-shrink-0 md:w-[250px]">
+            <img src="./image/spotligght2.avif" class="w-full" alt="">
+            <p class="md:font-semibold mt-2 md:text-lg font-medium">Up to 70% off</p>
+            <p class="md:font-light md:text-lg font-medium">Chic dresses & tops</p>
+         </div>
+
+         <div class="flex-shrink-0 md:w-[250px]">
+            <img src="./image/spotligght3.avif" class="w-full" alt="">
+            <p class="md:font-semibold mt-2 md:text-lg font-medium">Min 30% off</p>
+            <p class="md:font-light md:text-lg font-medium">Stylish ethinicwear</p>
+         </div>
+
+         <div class="flex-shrink-0 md:w-[250px]">
+            <img src="./image/spotligght4.avif" class="w-full" alt="">
+            <p class="md:font-semibold mt-2 md:text-lg font-medium">Min 40% off</p>
+            <p class="md:font-light md:text-lg font-medium">Bestselling activewear</p>
+         </div>
+
+         <div class="flex-shrink-0 md:w-[250px]">
+            <img src="./image/spotligght5.avif" class="w-full" alt="">
+            <p class="md:font-semibold mt-2 md:text-lg font-medium">Up to 60% off</p>
+            <p class="md:font-light md:text-lg font-medium">Trending global styles</p>
+         </div>
+      </div>
+   </div>
+   <!----------------------SEC ROW IN THE SPOTLIGHT for laptop view------------------------>
+   <div class="text_first_scroll overflow-x-auto hide-scrollbar 
+   scroll-smooth hidden md:flex mb-3">
+      <div class="flex whitespace-nowrap gap-6 px-16">
+
+         <div class="flex-shrink-0 md:w-[250px]">
+            <img src="./image/spotligght6.avif" class="w-full" alt="Indian Wear">
+            <p class="md:font-semibold mt-2 md:text-lg font-medium">Up to 25% off</p>
+            <p class="md:font-light md:text-lg font-medium">Chic printed co-ords</p>
+         </div>
+
+         <div class="flex-shrink-0 md:w-[250px]">
+            <img src="./image/spotligght7.avif" class="w-full" alt="">
+            <p class="md:font-semibold mt-2 md:text-lg font-medium">Up to 50% off</p>
+            <p class="md:font-light md:text-lg font-medium">Comfort-first styles</p>
+         </div>
+
+         <div class="flex-shrink-0 md:w-[250px]">
+            <img src="./image/spotligght8.avif" class="w-full" alt="">
+            <p class="md:font-semibold mt-2 md:text-lg font-medium">Min 30% off</p>
+            <p class="md:font-light md:text-lg font-medium">Cool casuals</p>
+         </div>
+
+         <div class="flex-shrink-0 md:w-[250px]">
+            <img src="./image/spotligght9.avif" class="w-full" alt="">
+            <p class="md:font-semibold mt-2 md:text-lg font-medium">Min 50% off</p>
+            <p class="md:font-light md:text-lg font-medium">Cute ethinics & casuals</p>
+         </div>
+
+         <div class="flex-shrink-0 md:w-[250px]">
+            <img src="./image/spotligght10.avif" class="w-full" alt="">
+            <p class="md:font-semibold mt-2 md:text-lg font-medium">Up to 30% off</p>
+            <p class="md:font-light md:text-lg font-medium">Aesthetic home decor</p>
+         </div>
+      </div>
+   </div>
+
+   <!--------------------------------Big image laptop view ss----------------------------------->
+   <div class="big_ss hidden md:flex">
+      <img src="./image/big-1.png">
+   </div>
+   <div class="big_ss3 hidden md:flex mb-2">
+      <img src="./image/big-2.png">
+   </div>
+
+   <!----------------------Our Stories for laptop view------------------------>
+   <div class="hidden md:flex px-14">
+      <h1 class="hot_laptop">OUR STORES</h1>
+   </div>
+   <div class="hot_laptop_second_para hidden md:flex px-14">
+      <h1 class="our_laptop_sec font-semibold">Find everything for your every need</h1>
+   </div>
+   <div class="text_first_scroll overflow-x-auto hide-scrollbar 
+   scroll-smooth hidden md:flex py-3">
+      <div class="flex whitespace-nowrap gap-6 px-14 py-2">
+
+         <div class="md:w-[150px] flex-shrink-0 text-center">
+            <img src="./image/our_stories1.avif" class="w-full rounded-xl" alt="">
+            <p class="md:font-semibold mt-2 md:text-lg font-medium">Women</p>
+         </div>
+
+         <div class="md:w-[150px] flex-shrink-0 text-center">
+            <img src="./image/our_stories2.avif" class="w-full rounded-xl" alt="">
+            <p class="md:font-semibold mt-2 md:text-lg font-medium">Men</p>
+         </div>
+
+         <div class="md:w-[150px] flex-shrink-0 text-center">
+            <img src="./image/our_stories3.avif" class="w-full rounded-xl" alt="">
+            <p class="md:font-semibold mt-2 md:text-lg font-medium">Kids</p>
+         </div>
+
+         <div class="md:w-[150px] flex-shrink-0 text-center">
+            <img src="./image/our_stories4.avif" class="w-full rounded-xl" alt="">
+            <p class="md:font-semibold mt-2 md:text-lg font-medium">Home</p>
+         </div>
+
+         <div class="md:w-[150px] flex-shrink-0 text-center">
+            <img src="./image/our_stories5.avif" class="w-full rounded-xl" alt="">
+            <p class="md:font-semibold mt-2 md:text-lg font-medium">Luxe Edit</p>
+         </div>
+
+         <div class="md:w-[150px] flex-shrink-0 text-center">
+            <img src="./image/our_stories6.avif" class="w-full rounded-xl" alt="">
+            <p class="md:font-semibold mt-2 md:text-lg font-medium">Hidden Gems</p>
+         </div>
+
+         <div class="md:w-[150px] flex-shrink-0 text-center">
+            <img src="./image/our_stories7.avif" class="w-full rounded-xl" alt="">
+            <p class="md:font-semibold mt-2 md:text-lg font-medium">Global stores</p>
+         </div>
+
+         <div class="md:w-[150px] flex-shrink-0 text-center">
+            <img src="./image/our_stories8.avif" class="w-full rounded-xl" alt="">
+            <p class="md:font-semibold mt-2 md:text-lg font-medium">Revolve</p>
+         </div>
+
+         <div class="md:w-[150px] flex-shrink-0 text-center">
+            <img src="./image/our_stories9.avif" class="w-full rounded-xl" alt="">
+            <p class="md:font-semibold mt-2 md:text-lg font-medium">House of Nykaa</p>
+         </div>
+      </div>
+   </div>
+
+   <!--------------Latest indian fasion image for mobile view---------------->
+   <div class="latest_indian_mobile md:hidden">
+      <img src="./image/mobile_Latest.avif">
+   </div>
+
+   <!--------------stores to explaore------------->
+   <div class="stors_to_explore md:hidden mt-3">
+      <img src="./image/store_mobile.avif">
+   </div>
+   <!--------------------stores to explaore inside categories------------------>
+   <div class="w-full flex items-center justify-center md:hidden">
+      <div class="flex whitespace-nowrap gap-2 p-2">
+
+         <div class="w-[80px]  flex-shrink-0 text-center">
+            <img src="./image/store_mobile1.avif" class="w-full rounded-xl" alt="">
+            <p class="font-medium text-sm mb-2">Women</p>
+         </div>
+
+         <div class="w-[80px]  flex-shrink-0 text-center">
+            <img src="./image/store_mobile2.avif" class="w-full rounded-xl" alt="">
+            <p class="font-medium text-sm mb-2">Men</p>
+         </div>
+
+         <div class="w-[80px]  flex-shrink-0 text-center">
+            <img src="./image/store_mobile3.jpg" class="w-full rounded-xl" alt="">
+            <p class="font-medium text-sm mb-2">Kids</p>
+         </div>
+
+         <div class="w-[80px]  flex-shrink-0 text-center">
+            <img src="./image/store_mobile4.avif" class="w-full rounded-xl" alt="">
+            <p class="font-medium text-sm mb-2">Home</p>
+         </div>
+
+      </div>
+   </div>
+
+
+   <!-----------------------------------mobile view nkkaa--------------------------------------------------->
+   <div class="mobile_view_nykaa md:hidden mt-3">
+      <img src="./image/mv_nykaaa.jpg">
+      <p class="mobile_view_nykaa_b"></p>
+   </div>
+   <!---------------------------fraud info laptop view------------------------------>
+   <div class="fraud_section md:flex justify-center mb-6 hidden">
+      <img src="./image/fraud_info.avif" class="fraud_sec_img">
+   </div>
+
+   <!-------------------------------Nykaa Fashion – Online Shopping Website----------------------->
+   <button onclick="toggleNykaaSection()" class="block md:hidden font-semibold focus:outline-none focus:ring-0
+   text-pink-900 underline my-4 [text-underline-offset:10px]">
+      Read More About Nykaa Fashion
+   </button>
+   <!-------------------------arrow for going to----------------------------->
+   <a href="#top" class="arrow_button fixed bottom-6 right-6 p-3 bg-white text-black 
+      shadow-md hover:bg-gray-800 transition-opacity duration-300 z-50">
+      ↑
+   </a>
+   <!--------------------id for js connect for toggle--------------------->
+   <div id="nykaaContent" class="hidden md:block max-h-[75vh] overflow-y-auto pr-2">
+
+      <div class="nykaa_fashion_section text-left">
+
+         <div class="inside_nykaa_fashion">
+            <h1 class="nykaa_head font-bold mb-3">
+               Nykaa Fashion – Online Shopping Website
+            </h1>
+            <h1 class="nykaa_head_sec font-semibold mb-3">
+               GADGETS & TECH ACCESSORIES
+            </h1>
+            <p class="nykaa_para font-light mb-3">
+               Your quest for the best gadgets and accessories ends at Nykaa Fashion. While we keep ourselves a step
+               ahead
+               when it comes to fashion, we also bring you the very best from the world of gadgets, tech accessories,
+               and
+               more. After all, they do play a role in uplifting your overall style!
+            </p>
+            <p class="nykaa_para font-light mb-3">
+               From innovative gadgets and gizmos to tech gear and accessories, discover everything you will ever need
+               to
+               boost your productivity and style.
+            </p>
+
+            <h1 class="nykaa_head_sec font-semibold mb-3">
+               Cameras and Accessories
+            </h1>
+            <p class="nykaa_para font-light mb-3">
+               If you have a flair for photography, it's about time you get a camera! Check out a range ofCameras and
+               Accessorieslike tripods and LED rings to take your photography to the next level. You will find tons of
+               options in terms of features, price, and more.
+            </p>
+
+            <h1 class="nykaa_head_sec font-semibold mb-3">
+               Smartwatches
+            </h1>
+            <p class="nykaa_para font-light mb-3">
+               Think it's time to add those amazing apps and notifications on your wrist? It's time to invest in a
+               Smartwatch! And what better place to find one than on Nykaa Fashion which brings you stylish smartwatches
+               with all the top features. Explore a wide range of offerings from savvy brands likeFossil,
+               Oppo,Fitbit,Pebble, and more. You will also find plenty of options in Sports Watches,Fitness Trackers,
+               Dress
+               Watches, and more.
+            </p>
+
+            <h1 class="nykaa_head_sec font-semibold mb-3">
+               Smartphone Cases & Covers
+            </h1>
+            <p class="nykaa_para font-light mb-3">
+               At Nykaa Fashion, you will always find plenty ofCases and Coversto keep your smartphone safe, stylish or
+               both. They are available in various styles and materials ranging from Metal, Leather, Rubber, Plastic,
+               Glass, and more. Apart from mobile cases, you will findLaptops Covers, Tablet Covers, Headphone Covers,
+               Watch Bands, and more. Get these from top brands like Apple, Samsung, and OnePlus, Realme, other popular
+               names such asChumbak,Macmerise, Na-Kd, andMvyno
+            </p>
+
+            <h1 class="nykaa_head_sec font-semibold mb-3">
+               Speakers
+            </h1>
+            <p class="nykaa_para font-light mb-3">
+               If you are still on the lookout for the perfectSpeakersthat suit your audiophile needs and fit your
+               budget,
+               you are guaranteed to find them at Nykaa Fashion. From global brands likeJBLand Amazon to top Indian
+               players
+               such asBoat,Portronics, andFingers, there's a wide range of brands to choose from - be it for home media
+               systems or your car.
+            </p>
+
+            <h1 class="nykaa_head_sec font-semibold mb-3">
+               Headphones
+            </h1>
+            <p class="nykaa_para font-light mb-3">
+               If you're bored of your old headphones and planning to buy one that truly rocks, look no further! At
+               Nykaa
+               Fashion, you will find almost every type ofHeadphonefor your needs. Available in various designs, sizes,
+               and
+               connectivity types, findBluetooth Headphones,True Wireless Headphones, Wireless on Ear Headphones,
+               Wireless
+               Over the Ear Headphones, and more from popular brands likeBoult Audio,Skullcandy, JBL, Boat, andHammer,
+               among others.
+            </p>
+
+            <h1 class="nykaa_head_sec font-semibold mb-3">
+               Power Banks And Chargers
+            </h1>
+            <p class="nykaa_para font-light mb-3">
+               Keep your smartphones, tablets and other media devices always topped up with the best Chargers and power
+               banks. At Nykaa Fashion, you will find multi-functional chargers with various connectivity options like
+               USB,
+               Firewire, Wireless, USB-C, and Wi-Fi from top brands.
+
+               If you have the perfect charger at home, you might need a power bank for when you're on the go. Choose
+               from
+               a range of options for your smartphone, tablet, Mp3 player or digital camera with capacity going up from
+               5000mAh to 27000mAh.
+            </p>
+            <p class="nykaa_para font-light mb-3">
+               If you have the perfect charger at home, you might need a power bank for when you're on the go. Choose
+               from
+               a range of options for your smartphone, tablet, Mp3 player or digital camera with capacity going up from
+               5000mAh to 27000mAh.
+            </p>
+
+            <h1 class="nykaa_head_sec font-semibold mb-3">
+               HOME DECOR
+            </h1>
+            <p class="nykaa_para font-light mb-3">
+               Create a home of your dreams with Nykaa Fashion. Whatever your needs and desires, find everything you're
+               looking for and discover things you never knew you needed to take your space to a stylish new level!
+               Explore
+               top home décor brands and get inspired by an incredible range of products including designerBed
+               Sheets,Photo
+               Frames,Mirrors,Indoor Planters,Curtains,Blankets,Pillows,Carpets and Rugs,Lamps, and more.
+            </p>
+
+            <h1 class="nykaa_head_sec font-semibold mb-3">
+               Wall Decor
+            </h1>
+            <p class="nykaa_para font-light mb-3">
+               A well-stated wall gives that perfect finishing touch to your home. Nykaa Fashion brings you the
+               classiestWall Décoritems from popular brands likeExclusiveLane,The Artment,HomeTown,
+               Chumbak,Ellementry,The
+               Décor Remedy, and many more to jazz up the walls.
+            </p>
+
+            <h1 class="nykaa_head_sec font-semibold mb-3">
+               Bedding
+            </h1>
+            <p class="nykaa_para font-light mb-3">
+               Ready to make your bedroom a stylish paradise? You definitely need to explore the vast collection of
+               bedding
+               products available at Nykaa Fashion. Get everything ranging from Bed sheets, Blankets, Pillows,Pillow
+               Covers,Cushion Covers, and all you can possibly think of from brands
+               likeD'Decor,Spaces,Maspar,Swayam,Dreams,Pure Home + Living, and more.
+            </p>
+
+            <h1 class="nykaa_head_sec font-semibold mb-3">
+               Kitchen & Dining
+            </h1>
+            <p class="nykaa_para font-light mb-3">
+               At Nykaa Fashion,Kitchen and Dining Essentialsare all about making your hosting nights easier with the
+               finest quality essentials likeDinnerware,Serveware,Cutlery,Table Accessories,Lunch EssentialsandKitchen
+               Appliances. Whether you are starting fresh or updating your supplies, you will find everything that a
+               modern
+               kitchen needs. Explore the widest range of offerings from reputed brands likeWonderchef, Ritu Kumar,
+               Ellementry, ExclusiveLane,Nestasia, Chumbak and more.
+            </p>
+
+            <h1 class="nykaa_head_sec font-semibold mb-3">
+               NYKAA FASHION LUXE
+            </h1>
+            <p class="nykaa_para font-light mb-3">
+               If you desire a bit of luxury in life and wish to take your style game up a notch, we bring youNykaa
+               Fashion
+               Luxe– a segment that offers head-turning styles and statement accessories to all luxury connoisseurs
+               including Men, Women, and Kids. Think of popular designer brands and local hidden gems with dedicated
+               offerings ranging from luxe watches, apparel, bags, footwear and more.
+            </p>
+
+            <h1 class="nykaa_head_sec font-semibold mb-3">
+               Luxe for Men
+            </h1>
+            <p class="nykaa_para font-light mb-3">
+               Find everything from men's apparel and Watches to bags and personal accessories – all made with supreme
+               quality fabrics and materials for a strong style statement.
+            </p>
+            <p class="nykaa_para font-light mb-3">
+               Brands to keep an eye on:Urvashi Kaur, Wendell Rodricks,Echke, Carte Blanche, andZeppelinamong others.
+            </p>
+
+            <h1 class="nykaa_head_sec font-semibold mb-3">
+               Luxe for Kids
+            </h1>
+            <p class="nykaa_para font-light mb-3">
+               Nykaa Fashion Luxe also offers a range of premium quality styles for your little ones – both boys and
+               girls.
+               Explore kids' Indian and western wear styles, sleepwear, and infant accessories.
+            </p>
+            <p class="nykaa_para font-light mb-3">
+               Brands to keep an eye on:Stokke,Little Luxury, Pastito A Pastito,Ps Kids By Payal Singhaland more
+            </p>
+
+            <h1 class="nykaa_head_sec font-semibold mb-3">
+               HIDDEN GEMS
+            </h1>
+            <p class="nykaa_para font-light mb-3">
+               Nykaa Fashion brings youHidden Gems– a curation of niche home grown labels that are deeply rooted in
+               Indian
+               craftsmanship and offer pieces that are mindfully handmade by local artisans. These niche labels stay
+               true
+               to the ethos of hidden gems by interpreting modern fashion trends and advancing craft techniques, giving
+               birth to the most exquisite creations that you will find only on Nykaa Fashion.
+            </p>
+            <p class="nykaa_para font-light mb-3">
+               The hidden gems curation presents labels from across the country, offering a beautiful mix of traditional
+               and contemporary fashion. FromLabel Shaurya Sanadhya,Nuhh, andRozana JaipurtoSwtantra,Baise Gaba,
+               andGulaboo
+               Jaipur, discover young and vibrant labels that champion modern Indian design.
+            </p>
+            <p class="nykaa_para font-light mb-3">
+               Look out for Indian staples like salwar suits, sarees, kurtas, and lehengas or experiment with a range of
+               fusion separates. Indigenous craftsmanship and age-old techniques of embroidery, stitching and weaving
+               have
+               a much-deserved moment in these creations. Apart from apparel, the hidden gems category also offers a
+               range
+               of accessories, jewellery, footwear, bags and more. You will find pieces for every occasion such as
+               Festive,
+               Casual,Formal,Semi-Formal, Wedding, and others.
+            </p>
+
+            <h1 class="nykaa_head_sec font-semibold mb-3">
+               STYLE INSPIRATION - LATEST FASHION TRENDS
+            </h1>
+            <p class="nykaa_para font-light mb-3">
+               From traditional Indian wear to contemporary and into-western wear, Nykaa Fashion brings you the latest
+               in
+               fashion in an array of styles. While there are plenty of trends to look out for, the world of fashion is
+               greatly inspired by comfortable clothing.
+            </p>
+            <p class="nykaa_para font-light mb-3">
+               Comfortable clothing has become a trend itself and it is certainly here to stay. Nykaa Fashion has a
+               special
+               Minimal Utility collection from Twenty Dresses that offers a winning combination of style and comfort. So
+               get ready for the ease of movement while being your stylish best in dresses made from breathable fabrics
+               with the finest details and soothing hues.
+            </p>
+            <p class="nykaa_para font-light mb-3">
+               If you're looking for Celebrity-Inspired Styles that will have you turning heads, check out the latest
+               designs fromMasabaon Nykaa Fashion that have been a huge hit among Bollywood celebs. Known for its
+               whimsical, bright prints and fusion wear designs, the label will be your go-to for big events.
+            </p>
+
+            <h1 class="nykaa_head_sec font-semibold mb-3">
+               SUSTAINABILITY & NYKAA
+            </h1>
+            <p class="nykaa_para font-light mb-3">
+               Nykaa Fashion is making every effort to bring sustainable fashion into the limelight through its special
+               edit -The Responsible Collection. It features a mix of sustainability-focused labels from both popular
+               and
+               upcoming labels. These carefully curated brands represent the advocates of sustainable fashion that focus
+               on
+               using organic materials, recycled products, and upcycled products for sustainable development.
+            </p>
+            <p class="nykaa_para font-light mb-3">
+               Nykaa Fashion also uses a special 'responsible' tag for products that engage in sustainable practices. We
+               also deliver 90% of our orders in eco friendly packaging made from recyclable paper flyers.
+            </p>
+            <p class="nykaa_para font-light mb-3">
+               Sustainable labels worth checking out: Chumbak, NA-KD,Diwaah,Kicks And Crawl,Cavallo By Linen
+               Club,Charukriti,Ed-A-Mamma,Khara Kapas,Monk & MeiandPaio.
+            </p>
+         </div>
+      </div>
+   </div>
+   </footer>
+
+   <!-------------------------------Foot side download our app mobile view------------------------------->
+   <div class="download_our_app md:hidden">
+      <img src="./image/mobile_app_download.jpg">
+   </div>
+
+   <!----------------------mobile view 1ST Footer--------------------->
+   <footer class="bg-gray-100 text-black py-8 px-4 md:hidden">
+      <div class="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+         <!-----------------------Column 1---------------------->
+         <div>
+            <h3 class="font-bold text-xl mb-2">Who are we</h3>
+            <ul class="space-y-1 text-sm text-black">
+               <li><a href="">About Us</a></li>
+               <li><a href="">Careers</a></li>
+               <li><a href="">Press</a></li>
+            </ul>
+         </div>
+
+         <!---------------------------Column 2--------------------------->
+         <div>
+            <h3 class="font-bold text-xl mb-2">Help</h3>
+            <ul class="space-y-1 text-sm text-black">
+               <li><a href="">Shipping & Return Policy</a></li>
+               <li><a href="">Help Center</a></li>
+               <li><a href="">Terms & Conditions</a></li>
+            </ul>
+         </div>
+
+         <!----------------------Column 3---------------------->
+         <div>
+            <h3 class="font-bold text-xl mb-2">More</h3>
+            <ul class="space-y-1 text-sm text-black">
+               <li><a href="">Privacy Policy</a></li>
+               <li><a href="">Sell on Nykaa Fashion</a></li>
+            </ul>
+         </div>
+
+         <!---------------------Column 4---------------------------->
+         <div>
+            <h3 class="font-bold text-xl mb-2">Quick Links</h3>
+            <ul class="space-y-1 text-sm text-black">
+               <li><a href="">Offers</a></li>
+               <li><a href="">Sitemap</a></li>
+               <li><a href="">Style Files</a></li>
+            </ul>
+         </div>
+
+         <!----------------------Column 5------------------>
+         <div>
+            <h3 class="font-bold text-xl mb-2">Follow Us</h3>
+            <div class="flex space-x-4">
+               <a href="" class="hover:text-pink-500">
+                  <i class="fa-brands fa-instagram"></i>
+               </a>
+               <a href="" class="hover:text-pink-500">
+                  <i class="fa-brands fa-facebook"></i>
+               </a>
+               <a href="" class="hover:text-pink-500">
+                  <i class="fa-brands fa-twitter"></i>
+               </a>
+            </div>
+         </div>
+      </div>
+   </footer>
+
+   <!-------------------------------Foot side download our app laptop view------------------------------->
+   <div class="download_our_app hidden md:flex">
+      <img src="./image/foot-side.png">
+   </div>
+
+   <!---------------------1st Footer laptop view------------------------->
+   <footer class="bg-gray-100 text-black py-8 px-4 hidden md:flex">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+         <div>
+            <h3 class="font-bold text-xl mb-2">Who are we</h3>
+            <ul class="space-y-1 text-sm text-black">
+               <li><a href="">About Us</a></li>
+               <li><a href="">Careers</a></li>
+               <li><a href="">Press</a></li>
+            </ul>
+
+         </div>
+         <div>
+            <h3 class="font-bold text-xl mb-2">Help</h3>
+            <ul class="space-y-1 text-sm text-black">
+               <li><a href="">Shipping & Return Policy</a></li>
+               <li><a href="">Help Center</a></li>
+               <li><a href="">Terms & Conditions</a></li>
+            </ul>
+         </div>
+         <div>
+            <h3 class="font-bold mb-2 mt-5"></h3>
+            <ul class="space-y-1 text-sm text-black">
+               <li><a href="">Privacy Policy</a></li>
+               <li><a href="">Sell on Nykaa Fashion</a></li>
+            </ul>
+         </div>
+         <div>
+            <h3 class="font-bold mb-2">Quick Links</h3>
+            <p class="text-sm text-black">offers</p>
+            <p class="text-sm text-black">Sitemap</p>
+            <p class="text-sm text-black">Style Files</p>
+         </div>
+         <div>
+            <h3 class="font-bold mb-2">Follow Us</h3>
+            <div class="flex space-x-4">
+               <a href="" class="hover:text-pink-500">
+                  <i class="fa-brands fa-instagram" style="color: #0d0d0d;"></i>
+               </a>
+               <a href="" class="hover:text-pink-500">
+                  <i class="fa-brands fa-facebook" style="color: #0f0f0f;"></i>
+               </a>
+               <a href="" class="hover:text-pink-500">
+                  <i class="fa-brands fa-twitter" style="color: #050505;"></i>
+               </a>
+            </div>
+         </div>
+      </div>
+   </footer>
+
+   <!------------------2nf Footer laptop view---------------------->
+   <footer class="bg-white px-6 py-10 text-sm text-gray-700">
+      <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-8">
+
+         <!------------Column 1------------------------>
+         <div>
+            <h3 class="font-semibold mb-3">WOMEN</h3>
+            <ul class="space-y-1">
+               <li>Women's Indianwear</li>
+               <li>Women's Westernwear</li>
+               <li>Bags</li>
+               <li>Women's Footwear</li>
+               <li>Women's Jewellery</li>
+               <li>Lingerie</li>
+               <li>Women's Sportswear</li>
+               <li>Women's Sleep & lounge</li>
+               <li>Women's Watches</li>
+               <li>Fashion Accessories</li>
+            </ul>
+         </div>
+
+         <!--------------------Column 2---------------------------->
+         <div>
+            <h3 class="font-semibold mb-3">MEN</h3>
+            <ul class="space-y-1">
+               <li>Topwear</li>
+               <li>Bottomwear</li>
+               <li>Ethnicwear</li>
+               <li>Men's Footwear</li>
+               <li>Men's Accessories</li>
+               <li>Innerwear & Sleepwear</li>
+               <li>Men's Watches</li>
+               <li>Bags & Backpacks</li>
+               <li>Athleisure</li>
+               <li>Sports & Fitness</li>
+            </ul>
+         </div>
+
+         <!---------------------Column 3---------------------->
+         <div>
+            <h3 class="font-semibold mb-3">KIDS</h3>
+            <ul class="space-y-1">
+               <li>Kids Indianwear</li>
+               <li>Kids Westernwear</li>
+               <li>Kids Footwear</li>
+               <li>Kids Jewellery</li>
+               <li>Feeding</li>
+               <li>Kids Sportswear</li>
+               <li>Kids Sleepwear</li>
+               <li>Kids Accessories</li>
+               <li>Toys & Games</li>
+               <li>Innerwear</li>
+            </ul>
+         </div>
+
+         <!-----------------------Column 4----------------------->
+         <div>
+            <h3 class="font-semibold mb-3">LUXE</h3>
+            <ul class="space-y-1">
+               <li>Luxury Ethnic Wear</li>
+               <li>Luxury Westernwear</li>
+               <li>Luxury Footwear</li>
+               <li>Luxury Bags</li>
+               <li>Luxury Accessories</li>
+               <li>Luxury Watches</li>
+               <li>Luxury Home</li>
+               <li>Luxury Jewellery</li>
+               <li>Summer Collection</li>
+               <li>Luxury Dresses</li>
+            </ul>
+         </div>
+
+         <!-------------------------Column 5--------------------------->
+         <div>
+            <h3 class="font-semibold mb-3">TOP BRANDS</h3>
+            <ul class="space-y-1">
+               <li>Puma</li>
+               <li>Vero Moda</li>
+               <li>W</li>
+               <li>Biba</li>
+               <li>Forever New</li>
+               <li>Skechers</li>
+               <li>Fablestreet</li>
+               <li>Only</li>
+               <li>Autumnlane</li>
+               <li>Cider</li>
+               <li>Accessorize London</li>
+            </ul>
+         </div>
+      </div>
+   </footer>
+
+   <!------------------------Last Footer for laptop----------------->
+   <div class="bg-pink-800 text-sm text-center text-white p-3">
+      <h1>© 2025 Nykaa Fashion Ltd. All Rights Reserved</h1>
+   </div>
+
+
+
+
+   <script src="script.js"></script>
 </body>
 
 </html>
