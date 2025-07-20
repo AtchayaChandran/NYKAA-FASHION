@@ -216,6 +216,12 @@ body {
    text-align: center;
    border:solid rgb(193, 41, 105);
 }
+
+.last_image{
+   padding-right:15px;
+}
+
+
 @media (max-width: 640px) {
 
    .nykaa_fashion_section {
@@ -229,4 +235,6 @@ body {
       width:90%;
       margin-left:20px;
    }
+
+
 }

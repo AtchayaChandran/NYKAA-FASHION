@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>Responsive Product Filter</title>
+   <!-------FONT AWESOME LINK-------->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <!---------CSS STYLE SHEET LINK--------->
+   <link rel="stylesheet" href="style.css">
+   <!------Tailwind CSS-------->
+   <script src="https://cdn.tailwindcss.com"></script>
+   <!--------Google Fonts---------->
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+   <!-----------------Bootstarp-------------------->
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"></script>
+</head>
+
+<body class="bg-gray-100">
+
+
+
+   <!-----------------------Mobile NavBar------------------------------------>
+   <nav>
+      <div class="nav_bar_container bg-white md:hidden fixed top-0 z-50 mt-[-15px]">
+         <div class="nav_bar_inside  flex" onclick="openMenu()">
+            <h1 class="hidden bg-pink-500 text-white text-center text-2xl p-4">Tailwind is Working</h1>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+               stroke="currentColor" class="nav_bar size-7">
+               <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+            <img src="./image/images.png" class="nav_image">
+            <div>
+               <i class="fa-regular fa-heart nav_heart" style="color: #0d0d0d;font-size: 24px;"></i>
+
+               <i class="fa-solid fa-bag-shopping nav_shopping_bag" style="color: #080808;font-size: 23px;"></i>
+            </div>
+         </div>
+      </div>
+   </nav>
+
+   <!---------------------Side Menu------------------>
+   <div id="sideMenu"
+      class="fixed top-0 left-[-100%] w-[299px] h-full bg-white shadow-xl z-50 transition-all duration-500 ease-in-out">
+      <div class="p-4 flex justify-between items-center border-b">
+         <h2 class="text-xl font-bold">Categories</h2>
+         <button onclick="closeMenu()" class="text-xl">&times;</button>
+      </div>
+      <div class="p-4">
+         <!---------------------image in menu bar----------------------->
+         <img src="./image/sample.jpg" alt="Sample" class="w-full mb-4 rounded" />
+         <p class="text-gray-700">Welcome to your side menu!</p>
+      </div>
+   </div>
+
+   <!-- Backdrop (when menu opens) -->
+   <div id="backdrop" onclick="closeMenu()" class="fixed inset-0 bg-black/50 z-40 hidden">
+   </div>
+
+   <!---------------------------------Laptop NavBar------------------------------------>
+   <nav>
+      <div class="laptop_navbar_container hidden md:flex">
+         <div class="laptop_inside_section flex fixed top-0 z-50 bg-white">
+            <img src="./image/logolap.png" class="lap_logo_img">
+            <a class="hover:underline  hover:text-pink-900 font-semibold text-lg text-gray-800 [text-underline-offset:20px]"
+               href="">Women</a>
+            <a class="hover:underline hover:text-pink-900 font-semibold text-lg text-gray-800 [text-underline-offset:20px]"
+               href="">Men</a>
+            <a class="hover:underline hover:text-pink-900 font-semibold text-lg text-gray-800 [text-underline-offset:20px]"
+               href="">Kids</a>
+            <a class="hover:underline hover:text-pink-900 font-semibold text-lg text-gray-800 [text-underline-offset:20px]"
+               href="">Home</a>
+            <a class="hover:underline hover:text-pink-900 font-semibold text-lg text-gray-800 [text-underline-offset:20px]"
+               href="">All Brands</a>
+            <a class="hover:underline hover:text-pink-900 font-semibold text-lg text-gray-800 [text-underline-offset:20px]"
+               href="">More</a>
+
+            <!--------------------------------Search for laptop---------------------------->
+            <div class="search_laptop_container bg-gray-100 font-awesome flex">
+               <i class="fa-solid fa-magnifying-glass mt-1" style="color: #939292;"></i>
+               <input type="text" placeholder="Search for styles, brands & more"
+                  class="bg-gray-100 outline-none search_input_laptop">
+               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                  <path d="M12 9a3.75 3.75 0 1 0 0 7.5A3.75 3.75 0 0 0 12 9Z" />
+                  <path fill-rule="evenodd"
+                     d="M9.344 3.071a49.52 49.52 0 0 1 5.312 0c.967.052 1.83.585 2.332 1.39l.821 1.317c.24.383.645.643 1.11.71.386.054.77.113 1.152.177 1.432.239 2.429 1.493 2.429 2.909V18a3 3 0 0 1-3 3h-15a3 3 0 0 1-3-3V9.574c0-1.416.997-2.67 2.429-2.909.382-.064.766-.123 1.151-.178a1.56 1.56 0 0 0 1.11-.71l.822-1.315a2.942 2.942 0 0 1 2.332-1.39ZM6.75 12.75a5.25 5.25 0 1 1 10.5 0 5.25 5.25 0 0 1-10.5 0Zm12-1.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z"
+                     clip-rule="evenodd" />
+               </svg>
+            </div>
+            <!-----------------------Account & wishlist & cart for Laptop--------------------->
+            <div class="account_container px-5 flex font-semibold">
+               <p class="account">
+                  <i class="fa-regular fa-user px-2" style="color: #0d0d0d;"></i>
+                  Account
+               </p>
+               <p class="wish_list">
+                  <i class="fa-regular fa-heart px-2" style="color: #050505;"></i>
+                  Wishlist
+               </p>
+               <p class="cart flex">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                     <path fill-rule="evenodd"
+                        d="M7.5 6v.75H5.513c-.96 0-1.764.724-1.865 1.679l-1.263 12A1.875 1.875 0 0 0 4.25 22.5h15.5a1.875 1.875 0 0 0 1.865-2.071l-1.263-12a1.875 1.875 0 0 0-1.865-1.679H16.5V6a4.5 4.5 0 1 0-9 0ZM12 3a3 3 0 0 0-3 3v.75h6V6a3 3 0 0 0-3-3Zm-3 8.25a3 3 0 1 0 6 0v-.75a.75.75 0 0 1 1.5 0v.75a4.5 4.5 0 1 1-9 0v-.75a.75.75 0 0 1 1.5 0v.75Z"
+                        clip-rule="evenodd" />
+                  </svg>Cart
+               </p>
+            </div>
+         </div>
+      </div>
+   </nav>
+
+   <!------------Sticky Horizontal Checkbox Filter------------->
+   <div class="sticky p-3 top-[5rem]
+    bg-white z-40 overflow-x-auto whitespace-nowrap py-2 px-4 border-b">
+      <label class="inline-flex items-center mr-4 space-x-2">
+         <input type="checkbox" class="form-checkbox category" value="women-ethnic">
+         <span>Women - Ethnic</span>
+      </label>
+      <label class="inline-flex items-center mr-4 space-x-2">
+         <input type="checkbox" class="form-checkbox category" value="women-western">
+         <span>Women - Western</span>
+      </label>
+      <label class="inline-flex items-center mr-4 space-x-2">
+         <input type="checkbox" class="form-checkbox category" value="men-traditional">
+         <span>Men - Traditional</span>
+      </label>
+      <label class="inline-flex items-center mr-4 space-x-2">
+         <input type="checkbox" class="form-checkbox category" value="men-modern">
+         <span>Men - Modern</span>
+      </label>
+      <label class="inline-flex items-center mr-4 space-x-2">
+         <input type="checkbox" class="form-checkbox category" value="kids">
+         <span>Kids</span>
+      </label>
+      <label class="inline-flex items-center mr-4 space-x-2">
+         <input type="checkbox" class="form-checkbox category" value="women-party">
+         <span>Women - Party</span>
+      </label>
+   </div>
+
+
+   <!-- Product Grid -->
+   <div class="grid grid-cols-2 md:grid-cols-7 gap-4 w-full mt-[100px] md:mt-[100px]">
+      <!-- Product Card -->
+      <div class="product-card women-western relative bg-white rounded-xl p-2">
+         <img src="./image/w1.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm">Western Dress</h3>
+         <p class="text-green-600 font-bold text-sm">₹999 <span
+               class="line-through text-gray-500 text-xs ml-2">₹1499</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.2)</p>
+         <p class="text-red-500 text-xs">33% OFF</p>
+      </div>
+
+      <div class="product-card women-western relative bg-white rounded-xl p-2">
+         <img src="./image/w-2.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm">Western Dress</h3>
+         <p class="text-green-600 font-bold text-sm">₹999 <span
+               class="line-through text-gray-500 text-xs ml-2">₹1499</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.2)</p>
+         <p class="text-red-500 text-xs">33% OFF</p>
+      </div>
+
+      <div class="product-card women-western relative bg-white rounded-xl p-2">
+         <img src="./image/w-3.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm">Western Dress</h3>
+         <p class="text-green-600 font-bold text-sm">₹999 <span
+               class="line-through text-gray-500 text-xs ml-2">₹1499</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.2)</p>
+         <p class="text-red-500 text-xs">33% OFF</p>
+      </div>
+
+      <div class="product-card women-western relative bg-white rounded-xl p-2">
+         <img src="./image/w-4.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm">Western Dress</h3>
+         <p class="text-green-600 font-bold text-sm">₹999 <span
+               class="line-through text-gray-500 text-xs ml-2">₹1499</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.2)</p>
+         <p class="text-red-500 text-xs">33% OFF</p>
+      </div>
+
+      <div class="product-card women-western relative bg-white rounded-xl p-2">
+         <img src="./image/w-5.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm">Western Dress</h3>
+         <p class="text-green-600 font-bold text-sm">₹999 <span
+               class="line-through text-gray-500 text-xs ml-2">₹1499</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.2)</p>
+         <p class="text-red-500 text-xs">33% OFF</p>
+      </div>
+
+      <div class="product-card women-western relative bg-white rounded-xl p-2">
+         <img src="./image/w-6.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm">Western Dress</h3>
+         <p class="text-green-600 font-bold text-sm">₹999 <span
+               class="line-through text-gray-500 text-xs ml-2">₹1499</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.2)</p>
+         <p class="text-red-500 text-xs">33% OFF</p>
+      </div>
+
+      <div class="product-card women-western relative bg-white rounded-xl p-2">
+         <img src="./image/w-7.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm">Western Dress</h3>
+         <p class="text-green-600 font-bold text-sm">₹999 <span
+               class="line-through text-gray-500 text-xs ml-2">₹1499</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.2)</p>
+         <p class="text-red-500 text-xs">33% OFF</p>
+      </div>
+
+      <div class="product-card women-western relative bg-white rounded-xl p-2">
+         <img src="./image/w-8.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm">Western Dress</h3>
+         <p class="text-green-600 font-bold text-sm">₹999 <span
+               class="line-through text-gray-500 text-xs ml-2">₹1499</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.2)</p>
+         <p class="text-red-500 text-xs">33% OFF</p>
+      </div>
+
+      <div class="product-card women-western relative bg-white rounded-xl p-2">
+         <img src="./image/w-9.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm">Western Dress</h3>
+         <p class="text-green-600 font-bold text-sm">₹999 <span
+               class="line-through text-gray-500 text-xs ml-2">₹1499</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.2)</p>
+         <p class="text-red-500 text-xs">33% OFF</p>
+      </div>
+
+      <div class="product-card women-western relative bg-white rounded-xl p-2">
+         <img src="./image/w-10.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm">Western Dress</h3>
+         <p class="text-green-600 font-bold text-sm">₹999 <span
+               class="line-through text-gray-500 text-xs ml-2">₹1499</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.2)</p>
+         <p class="text-red-500 text-xs">33% OFF</p>
+      </div>
+
+      <div class="product-card women-western relative bg-white rounded-xl p-2">
+         <img src="./image/w-11.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm">Western Dress</h3>
+         <p class="text-green-600 font-bold text-sm">₹999 <span
+               class="line-through text-gray-500 text-xs ml-2">₹1499</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.2)</p>
+         <p class="text-red-500 text-xs">33% OFF</p>
+      </div>
+
+
+      <div class="product-card women-western relative bg-white rounded-xl p-2">
+         <img src="./image/w-12.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm">Western Dress</h3>
+         <p class="text-green-600 font-bold text-sm">₹999 <span
+               class="line-through text-gray-500 text-xs ml-2">₹1499</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.2)</p>
+         <p class="text-red-500 text-xs">33% OFF</p>
+      </div>
+
+      <div class="product-card women-western relative bg-white rounded-xl p-2">
+         <img src="./image/w-13.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm">Western Dress</h3>
+         <p class="text-green-600 font-bold text-sm">₹999 <span
+               class="line-through text-gray-500 text-xs ml-2">₹1499</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.2)</p>
+         <p class="text-red-500 text-xs">33% OFF</p>
+      </div>
+
+      <div class="product-card women-western relative bg-white rounded-xl p-2">
+         <img src="./image/w-14.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm">Western Dress</h3>
+         <p class="text-green-600 font-bold text-sm">₹999 <span
+               class="line-through text-gray-500 text-xs ml-2">₹1499</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.2)</p>
+         <p class="text-red-500 text-xs">33% OFF</p>
+      </div>
+
+      <div class="product-card women-western relative bg-white rounded-xl p-2">
+         <img src="./image/w-15.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm">Western Dress</h3>
+         <p class="text-green-600 font-bold text-sm">₹999 <span
+               class="line-through text-gray-500 text-xs ml-2">₹1499</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.2)</p>
+         <p class="text-red-500 text-xs">33% OFF</p>
+      </div>
+
+      <div class="product-card women-western relative bg-white rounded-xl p-2">
+         <img src="./image/w-16.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm">Western Dress</h3>
+         <p class="text-green-600 font-bold text-sm">₹999 <span
+               class="line-through text-gray-500 text-xs ml-2">₹1499</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.2)</p>
+         <p class="text-red-500 text-xs">33% OFF</p>
+      </div>
+
+      <div class="product-card women-western relative bg-white rounded-xl p-2">
+         <img src="./image/w-17.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm">Western Dress</h3>
+         <p class="text-green-600 font-bold text-sm">₹999 <span
+               class="line-through text-gray-500 text-xs ml-2">₹1499</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.2)</p>
+         <p class="text-red-500 text-xs">33% OFF</p>
+      </div>
+
+      <div class="product-card women-western relative bg-white rounded-xl p-2">
+         <img src="./image/w-18.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm">Western Dress</h3>
+         <p class="text-green-600 font-bold text-sm">₹999 <span
+               class="line-through text-gray-500 text-xs ml-2">₹1499</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.2)</p>
+         <p class="text-red-500 text-xs">33% OFF</p>
+      </div>
+
+      <div class="product-card women-western relative bg-white rounded-xl p-2">
+         <img src="./image/w-19.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm">Western Dress</h3>
+         <p class="text-green-600 font-bold text-sm">₹999 <span
+               class="line-through text-gray-500 text-xs ml-2">₹1499</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.2)</p>
+         <p class="text-red-500 text-xs">33% OFF</p>
+      </div>
+
+      <div class="product-card women-western relative bg-white rounded-xl p-2">
+         <img src="./image/w-20.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm">Western Dress</h3>
+         <p class="text-green-600 font-bold text-sm">₹999 <span
+               class="line-through text-gray-500 text-xs ml-2">₹1499</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.2)</p>
+         <p class="text-red-500 text-xs">33% OFF</p>
+      </div>
+
+      <!------------ethnic women wear------------->
+      <div class="product-card women-ethnic relative bg-white rounded-xl p-2">
+         <img src="./image/e1.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm">Ethnic womenwear</h3>
+         <p class="text-green-600 font-bold text-sm">₹14099 <span
+               class="line-through text-gray-500 text-xs ml-2">₹16,990</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.5)</p>
+         <p class="text-red-500 text-xs">25% OFF</p>
+      </div>
+
+      <div class="product-card women-ethnic relative bg-white rounded-xl p-2">
+         <img src="./image/e2.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm">Ethnic womenwear</h3>
+         <p class="text-green-600 font-bold text-sm">₹1499 <span
+               class="line-through text-gray-500 text-xs ml-2">₹1990</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.5)</p>
+         <p class="text-red-500 text-xs">25% OFF</p>
+      </div>
+
+      <div class="product-card women-ethnic relative bg-white rounded-xl p-2">
+         <img src="./image/e3.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm">Ethnic womenwear</h3>
+         <p class="text-green-600 font-bold text-sm">₹14099 <span
+               class="line-through text-gray-500 text-xs ml-2">₹16,990</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.5)</p>
+         <p class="text-red-500 text-xs">25% OFF</p>
+      </div>
+
+      <div class="product-card women-ethnic relative bg-white rounded-xl p-2">
+         <img src="./image/e5.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm">Ethnic womenwear</h3>
+         <p class="text-green-600 font-bold text-sm">₹14099 <span
+               class="line-through text-gray-500 text-xs ml-2">₹16,990</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.5)</p>
+         <p class="text-red-500 text-xs">25% OFF</p>
+      </div>
+
+      <div class="product-card women-ethnic relative bg-white rounded-xl p-2">
+         <img src="./image/e6.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm">Ethnic womenwear</h3>
+         <p class="text-green-600 font-bold text-sm">₹2099 <span
+               class="line-through text-gray-500 text-xs ml-2">₹3990</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.5)</p>
+         <p class="text-red-500 text-xs">25% OFF</p>
+      </div>
+
+      <div class="product-card women-ethnic relative bg-white rounded-xl p-2">
+         <img src="./image/e7.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm">Ethnic womenwear</h3>
+         <p class="text-green-600 font-bold text-sm">₹2099 <span
+               class="line-through text-gray-500 text-xs ml-2">₹3990</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.5)</p>
+         <p class="text-red-500 text-xs">25% OFF</p>
+      </div>
+
+      <div class="product-card women-ethnic relative bg-white rounded-xl p-2">
+         <img src="./image/e8.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #ffffff;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm">Ethnic womenwear</h3>
+         <p class="text-green-600 font-bold text-sm">₹2099 <span
+               class="line-through text-gray-500 text-xs ml-2">₹3990</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.5)</p>
+         <p class="text-red-500 text-xs">25% OFF</p>
+      </div>
+
+      <div class="product-card women-ethnic relative bg-white rounded-xl p-2">
+         <img src="./image/e9.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #000000;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm">Ethnic womenwear</h3>
+         <p class="text-green-600 font-bold text-sm">₹2099 <span
+               class="line-through text-gray-500 text-xs ml-2">₹3990</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.5)</p>
+         <p class="text-red-500 text-xs">25% OFF</p>
+      </div>
+
+      <div class="product-card women-ethnic relative bg-white rounded-xl p-2">
+         <img src="./image/e10.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm">Ethnic womenwear</h3>
+         <p class="text-green-600 font-bold text-sm">₹2099 <span
+               class="line-through text-gray-500 text-xs ml-2">₹3990</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.5)</p>
+         <p class="text-red-500 text-xs">25% OFF</p>
+      </div>
+
+      <div class="product-card women-ethnic relative bg-white rounded-xl p-2">
+         <img src="./image/e11.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm">Ethnic womenwear</h3>
+         <p class="text-green-600 font-bold text-sm">₹2099 <span
+               class="line-through text-gray-500 text-xs ml-2">₹3990</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.5)</p>
+         <p class="text-red-500 text-xs">25% OFF</p>
+      </div>
+
+      <div class="product-card women-ethnic relative bg-white rounded-xl p-2">
+         <img src="./image/e13.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm">Ethnic womenwear</h3>
+         <p class="text-green-600 font-bold text-sm">₹2099 <span
+               class="line-through text-gray-500 text-xs ml-2">₹3990</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.5)</p>
+         <p class="text-red-500 text-xs">25% OFF</p>
+      </div>
+
+      <div class="product-card women-ethnic relative bg-white rounded-xl p-2">
+         <img src="./image/e14.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm">Ethnic womenwear</h3>
+         <p class="text-green-600 font-bold text-sm">₹2099 <span
+               class="line-through text-gray-500 text-xs ml-2">₹3990</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.5)</p>
+         <p class="text-red-500 text-xs">25% OFF</p>
+      </div>
+
+      <div class="product-card women-ethnic relative bg-white rounded-xl p-2">
+         <img src="./image/e15.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #f9f7f7;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm">Ethnic womenwear</h3>
+         <p class="text-green-600 font-bold text-sm">₹2099 <span
+               class="line-through text-gray-500 text-xs ml-2">₹3990</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.5)</p>
+         <p class="text-red-500 text-xs">25% OFF</p>
+      </div>
+
+      <div class="product-card women-ethnic relative bg-white rounded-xl p-2">
+         <img src="./image/e16.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm">Ethnic womenwear</h3>
+         <p class="text-green-600 font-bold text-sm">₹2099 <span
+               class="line-through text-gray-500 text-xs ml-2">₹3990</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.5)</p>
+         <p class="text-red-500 text-xs">25% OFF</p>
+      </div>
+
+      <div class="product-card women-ethnic relative bg-white rounded-xl p-2">
+         <img src="./image/e17.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm">Ethnic womenwear</h3>
+         <p class="text-green-600 font-bold text-sm">₹2099 <span
+               class="line-through text-gray-500 text-xs ml-2">₹3990</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.5)</p>
+         <p class="text-red-500 text-xs">25% OFF</p>
+      </div>
+
+      <div class="product-card women-ethnic relative bg-white rounded-xl p-2">
+         <img src="./image/e18.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm">Ethnic womenwear</h3>
+         <p class="text-green-600 font-bold text-sm">₹2099 <span
+               class="line-through text-gray-500 text-xs ml-2">₹3990</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.5)</p>
+         <p class="text-red-500 text-xs">25% OFF</p>
+      </div>
+
+      <div class="product-card women-ethnic relative bg-white rounded-xl p-2">
+         <img src="./image/e19.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #fffdfd;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm">Ethnic womenwear</h3>
+         <p class="text-green-600 font-bold text-sm">₹2099 <span
+               class="line-through text-gray-500 text-xs ml-2">₹3990</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.5)</p>
+         <p class="text-red-500 text-xs">25% OFF</p>
+      </div>
+
+      <div class="product-card women-ethnic relative bg-white rounded-xl p-2">
+         <img src="./image/e20.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm">Ethnic womenwear</h3>
+         <p class="text-green-600 font-bold text-sm">₹2099 <span
+               class="line-through text-gray-500 text-xs ml-2">₹3990</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.5)</p>
+         <p class="text-red-500 text-xs">25% OFF</p>
+      </div>
+      <!--------------------men ethnic----------------------->
+
+      <div class="product-card men-traditional relative bg-white rounded-xl p-2">
+         <img src="./image/m-1.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm">Ethnic menwear</h3>
+         <p class="text-green-600 font-bold text-sm">₹2099 <span
+               class="line-through text-gray-500 text-xs ml-2">₹3990</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.5)</p>
+         <p class="text-red-500 text-xs">25% OFF</p>
+      </div>
+
+      <div class="product-card men-traditional relative bg-white rounded-xl p-2">
+         <img src="./image/m-2.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm">Traditional menwear</h3>
+         <p class="text-green-600 font-bold text-sm">₹2099 <span
+               class="line-through text-gray-500 text-xs ml-2">₹3990</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.5)</p>
+         <p class="text-red-500 text-xs">25% OFF</p>
+      </div>
+
+      <div class="product-card men-traditional relative bg-white rounded-xl p-2">
+         <img src="./image/m-3.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm">Traditional menwear</h3>
+         <p class="text-green-600 font-bold text-sm">₹2099 <span
+               class="line-through text-gray-500 text-xs ml-2">₹3990</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.5)</p>
+         <p class="text-red-500 text-xs">25% OFF</p>
+      </div>
+
+      <div class="product-card men-traditional relative bg-white rounded-xl p-2">
+         <img src="./image/m-4.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm">Traditional menwear</h3>
+         <p class="text-green-600 font-bold text-sm">₹2099 <span
+               class="line-through text-gray-500 text-xs ml-2">₹3990</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.5)</p>
+         <p class="text-red-500 text-xs">25% OFF</p>
+      </div>
+
+      <div class="product-card men-traditional relative bg-white rounded-xl p-2">
+         <img src="./image/m-5.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm">Traditional menwear</h3>
+         <p class="text-green-600 font-bold text-sm">₹2099 <span
+               class="line-through text-gray-500 text-xs ml-2">₹3990</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.5)</p>
+         <p class="text-red-500 text-xs">25% OFF</p>
+      </div>
+
+      <div class="product-card men-traditional relative bg-white rounded-xl p-2">
+         <img src="./image/m-6.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm">Traditional menwear</h3>
+         <p class="text-green-600 font-bold text-sm">₹2099 <span
+               class="line-through text-gray-500 text-xs ml-2">₹3990</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.5)</p>
+         <p class="text-red-500 text-xs">25% OFF</p>
+      </div>
+
+      <div class="product-card men-traditional relative bg-white rounded-xl p-2">
+         <img src="./image/m-7.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm">Traditional menwear</h3>
+         <p class="text-green-600 font-bold text-sm">₹2099 <span
+               class="line-through text-gray-500 text-xs ml-2">₹3990</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.5)</p>
+         <p class="text-red-500 text-xs">25% OFF</p>
+      </div>
+
+      <div class="product-card men-modern relative bg-white rounded-xl p-2">
+         <img src="./image/c1.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm">modern menwear</h3>
+         <p class="text-green-600 font-bold text-sm">₹3099 <span
+               class="line-through text-gray-500 text-xs ml-2">₹4990</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.5)</p>
+         <p class="text-red-500 text-xs">25% OFF</p>
+      </div>
+
+      <div class="product-card men-modern relative bg-white rounded-xl p-2">
+         <img src="./image/c2.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm">modern menwear</h3>
+         <p class="text-green-600 font-bold text-sm">₹3099 <span
+               class="line-through text-gray-500 text-xs ml-2">₹4990</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.5)</p>
+         <p class="text-red-500 text-xs">25% OFF</p>
+      </div>
+
+      <div class="product-card men-modern relative bg-white rounded-xl p-2">
+         <img src="./image/c3.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm">modern menwear</h3>
+         <p class="text-green-600 font-bold text-sm">₹3099 <span
+               class="line-through text-gray-500 text-xs ml-2">₹4990</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.5)</p>
+         <p class="text-red-500 text-xs">25% OFF</p>
+      </div>
+
+      <div class="product-card men-modern relative bg-white rounded-xl p-2">
+         <img src="./image/c4.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm">modern menwear</h3>
+         <p class="text-green-600 font-bold text-sm">₹3099 <span
+               class="line-through text-gray-500 text-xs ml-2">₹4990</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.5)</p>
+         <p class="text-red-500 text-xs">25% OFF</p>
+      </div>
+
+      <div class="product-card men-modern relative bg-white rounded-xl p-2">
+         <img src="./image/c5.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm">modern menwear</h3>
+         <p class="text-green-600 font-bold text-sm">₹3099 <span
+               class="line-through text-gray-500 text-xs ml-2">₹4990</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.5)</p>
+         <p class="text-red-500 text-xs">25% OFF</p>
+      </div>
+
+      <div class="product-card men-modern relative bg-white rounded-xl p-2">
+         <img src="./image/c6.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm">modern menwear</h3>
+         <p class="text-green-600 font-bold text-sm">₹3099 <span
+               class="line-through text-gray-500 text-xs ml-2">₹4990</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.5)</p>
+         <p class="text-red-500 text-xs">25% OFF</p>
+      </div>
+
+      <div class="product-card men-modern relative bg-white rounded-xl p-2">
+         <img src="./image/c7.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm">modern menwear</h3>
+         <p class="text-green-600 font-bold text-sm">₹3099 <span
+               class="line-through text-gray-500 text-xs ml-2">₹4990</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.5)</p>
+         <p class="text-red-500 text-xs">25% OFF</p>
+      </div>
+
+      <div class="product-card men-modern relative bg-white rounded-xl p-2">
+         <img src="./image/c8.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm">modern menwear</h3>
+         <p class="text-green-600 font-bold text-sm">₹3099 <span
+               class="line-through text-gray-500 text-xs ml-2">₹4990</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.5)</p>
+         <p class="text-red-500 text-xs">25% OFF</p>
+      </div>
+
+      <div class="product-card men-modern relative bg-white rounded-xl p-2">
+         <img src="./image/c9.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm">modern menwear</h3>
+         <p class="text-green-600 font-bold text-sm">₹3099 <span
+               class="line-through text-gray-500 text-xs ml-2">₹4990</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.5)</p>
+         <p class="text-red-500 text-xs">25% OFF</p>
+      </div>
+
+      <div class="product-card men-modern relative bg-white rounded-xl p-2">
+         <img src="./image/c10.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm">modern menwear</h3>
+         <p class="text-green-600 font-bold text-sm">₹3099 <span
+               class="line-through text-gray-500 text-xs ml-2">₹4990</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.5)</p>
+         <p class="text-red-500 text-xs">25% OFF</p>
+      </div>
+      <!---------------------------kids------------------------->
+      <div class="product-card kids relative bg-white rounded-xl p-2">
+         <img src="./image/k1.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm">kidswear</h3>
+         <p class="text-green-600 font-bold text-sm">₹4099 <span
+               class="line-through text-gray-500 text-xs ml-2">₹8990</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.5)</p>
+         <p class="text-red-500 text-xs">25% OFF</p>
+      </div>
+
+      <div class="product-card kids relative bg-white rounded-xl p-2">
+         <img src="./image/k2.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm">kidswear</h3>
+         <p class="text-green-600 font-bold text-sm">₹4099 <span
+               class="line-through text-gray-500 text-xs ml-2">₹8990</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.5)</p>
+         <p class="text-red-500 text-xs">25% OFF</p>
+      </div>
+
+      <div class="product-card kids relative bg-white rounded-xl p-2">
+         <img src="./image/k3.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm">kidswear</h3>
+         <p class="text-green-600 font-bold text-sm">₹4099 <span
+               class="line-through text-gray-500 text-xs ml-2">₹8990</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.5)</p>
+         <p class="text-red-500 text-xs">25% OFF</p>
+      </div>
+
+      <div class="product-card kids relative bg-white rounded-xl p-2">
+         <img src="./image/k4.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm">kidswear</h3>
+         <p class="text-green-600 font-bold text-sm">₹4099 <span
+               class="line-through text-gray-500 text-xs ml-2">₹8990</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.5)</p>
+         <p class="text-red-500 text-xs">25% OFF</p>
+      </div>
+
+      <div class="product-card kids relative bg-white rounded-xl p-2">
+         <img src="./image/k5.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm">kidswear</h3>
+         <p class="text-green-600 font-bold text-sm">₹4099 <span
+               class="line-through text-gray-500 text-xs ml-2">₹8990</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.5)</p>
+         <p class="text-red-500 text-xs">25% OFF</p>
+      </div>
+
+      <div class="product-card kids relative bg-white rounded-xl p-2">
+         <img src="./image/k6.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm">kidswear</h3>
+         <p class="text-green-600 font-bold text-sm">₹4099 <span
+               class="line-through text-gray-500 text-xs ml-2">₹8990</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.5)</p>
+         <p class="text-red-500 text-xs">25% OFF</p>
+      </div>
+
+      <div class="product-card kids relative bg-white rounded-xl p-2">
+         <img src="./image/k7.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm">kidswear</h3>
+         <p class="text-green-600 font-bold text-sm">₹4099 <span
+               class="line-through text-gray-500 text-xs ml-2">₹8990</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.5)</p>
+         <p class="text-red-500 text-xs">25% OFF</p>
+      </div>
+
+      <div class="product-card kids relative bg-white rounded-xl p-2">
+         <img src="./image/k8.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm">kidswear</h3>
+         <p class="text-green-600 font-bold text-sm">₹4099 <span
+               class="line-through text-gray-500 text-xs ml-2">₹8990</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.5)</p>
+         <p class="text-red-500 text-xs">25% OFF</p>
+      </div>
+
+      <div class="product-card kids relative bg-white rounded-xl p-2">
+         <img src="./image/k9.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm">kidswear</h3>
+         <p class="text-green-600 font-bold text-sm">₹4099 <span
+               class="line-through text-gray-500 text-xs ml-2">₹8990</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.5)</p>
+         <p class="text-red-500 text-xs">25% OFF</p>
+      </div>
+
+      <div class="product-card kids relative bg-white rounded-xl p-2">
+         <img src="./image/k10.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm">kidswear</h3>
+         <p class="text-green-600 font-bold text-sm">₹4099 <span
+               class="line-through text-gray-500 text-xs ml-2">₹8990</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.5)</p>
+         <p class="text-red-500 text-xs">25% OFF</p>
+      </div>
+
+      <div class="product-card kids relative bg-white rounded-xl p-2">
+         <img src="./image/k11.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm">kidswear</h3>
+         <p class="text-green-600 font-bold text-sm">₹4099 <span
+               class="line-through text-gray-500 text-xs ml-2">₹8990</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.5)</p>
+         <p class="text-red-500 text-xs">25% OFF</p>
+      </div>
+
+      <!-----------------women party wear------------------>
+      <div class="product-card women-party relative bg-white rounded-xl p-2">
+         <img src="./image/p1.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm"> Women partywear</h3>
+         <p class="text-green-600 font-bold text-sm">₹8099 <span
+               class="line-through text-gray-500 text-xs ml-2">₹9990</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.5)</p>
+         <p class="text-red-500 text-xs">55% OFF</p>
+      </div>
+
+      <div class="product-card women-party relative bg-white rounded-xl p-2">
+         <img src="./image/p2.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm"> Women partywear</h3>
+         <p class="text-green-600 font-bold text-sm">₹8099 <span
+               class="line-through text-gray-500 text-xs ml-2">₹9990</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.5)</p>
+         <p class="text-red-500 text-xs">55% OFF</p>
+      </div>
+
+      <div class="product-card women-party relative bg-white rounded-xl p-2">
+         <img src="./image/p3.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #db26b7;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm"> Women partywear</h3>
+         <p class="text-green-600 font-bold text-sm">₹8099 <span
+               class="line-through text-gray-500 text-xs ml-2">₹9990</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.5)</p>
+         <p class="text-red-500 text-xs">55% OFF</p>
+      </div>
+
+      <div class="product-card women-party relative bg-white rounded-xl p-2">
+         <img src="./image/p4.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #f5f5f5;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm"> Women partywear</h3>
+         <p class="text-green-600 font-bold text-sm">₹8099 <span
+               class="line-through text-gray-500 text-xs ml-2">₹9990</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.5)</p>
+         <p class="text-red-500 text-xs">55% OFF</p>
+      </div>
+
+      <div class="product-card women-party relative bg-white rounded-xl p-2">
+         <img src="./image/p5.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #f5f3f3;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm"> Women partywear</h3>
+         <p class="text-green-600 font-bold text-sm">₹8099 <span
+               class="line-through text-gray-500 text-xs ml-2">₹9990</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.5)</p>
+         <p class="text-red-500 text-xs">55% OFF</p>
+      </div>
+
+      <div class="product-card women-party relative bg-white rounded-xl p-2">
+         <img src="./image/p6.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #f7f7f7;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm"> Women partywear</h3>
+         <p class="text-green-600 font-bold text-sm">₹8099 <span
+               class="line-through text-gray-500 text-xs ml-2">₹9990</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.5)</p>
+         <p class="text-red-500 text-xs">55% OFF</p>
+      </div>
+
+      <div class="product-card women-party relative bg-white rounded-xl p-2">
+         <img src="./image/p7.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm"> Women partywear</h3>
+         <p class="text-green-600 font-bold text-sm">₹8099 <span
+               class="line-through text-gray-500 text-xs ml-2">₹9990</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.5)</p>
+         <p class="text-red-500 text-xs">55% OFF</p>
+      </div>
+
+      <div class="product-card women-party relative bg-white rounded-xl p-2">
+         <img src="./image/p8.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm"> Women partywear</h3>
+         <p class="text-green-600 font-bold text-sm">₹8099 <span
+               class="line-through text-gray-500 text-xs ml-2">₹9990</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.5)</p>
+         <p class="text-red-500 text-xs">55% OFF</p>
+      </div>
+
+      <div class="product-card women-party relative bg-white rounded-xl p-2">
+         <img src="./image/p9.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm"> Women partywear</h3>
+         <p class="text-green-600 font-bold text-sm">₹8099 <span
+               class="line-through text-gray-500 text-xs ml-2">₹9990</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.5)</p>
+         <p class="text-red-500 text-xs">55% OFF</p>
+      </div>
+
+      <div class="product-card women-party relative bg-white rounded-xl p-2">
+         <img src="./image/p10.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm"> Women partywear</h3>
+         <p class="text-green-600 font-bold text-sm">₹8099 <span
+               class="line-through text-gray-500 text-xs ml-2">₹9990</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.5)</p>
+         <p class="text-red-500 text-xs">55% OFF</p>
+      </div>
+
+      <div class="product-card women-party relative bg-white rounded-xl p-2">
+         <img src="./image/p11.jpg" class="rounded-lg" />
+         <div class="absolute top-2 right-2 text-red-500 text-xl">
+            <i class="fa-solid fa-heart" style="color: #030303;"></i>
+         </div>
+         <h3 class="font-semibold mt-2 text-sm"> Women partywear</h3>
+         <p class="text-green-600 font-bold text-sm">₹8099 <span
+               class="line-through text-gray-500 text-xs ml-2">₹9990</span></p>
+         <p class="text-yellow-500 text-sm">★★★★☆ (4.5)</p>
+         <p class="text-red-500 text-xs">55% OFF</p>
+      </div>
+   </div>
+   </div>
+
+
+   <!---------------------1st Footer laptop view------------------------->
+   <footer class="bg-gray-100 text-black py-8 px-4 hidden md:flex mt-5">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+         <div>
+            <h3 class="font-bold text-xl mb-2">Who are we</h3>
+            <ul class="space-y-1 text-sm text-black">
+               <li><a href="">About Us</a></li>
+               <li><a href="">Careers</a></li>
+               <li><a href="">Press</a></li>
+            </ul>
+
+         </div>
+         <div>
+            <h3 class="font-bold text-xl mb-2">Help</h3>
+            <ul class="space-y-1 text-sm text-black">
+               <li><a href="">Shipping & Return Policy</a></li>
+               <li><a href="">Help Center</a></li>
+               <li><a href="">Terms & Conditions</a></li>
+            </ul>
+         </div>
+         <div>
+            <h3 class="font-bold mb-2 mt-5"></h3>
+            <ul class="space-y-1 text-sm text-black">
+               <li><a href="">Privacy Policy</a></li>
+               <li><a href="">Sell on Nykaa Fashion</a></li>
+            </ul>
+         </div>
+         <div>
+            <h3 class="font-bold mb-2">Quick Links</h3>
+            <p class="text-sm text-black">offers</p>
+            <p class="text-sm text-black">Sitemap</p>
+            <p class="text-sm text-black">Style Files</p>
+         </div>
+         <div>
+            <h3 class="font-bold mb-2">Follow Us</h3>
+            <div class="flex space-x-4">
+               <a href="" class="hover:text-pink-500">
+                  <i class="fa-brands fa-instagram" style="color: #0d0d0d;"></i>
+               </a>
+               <a href="" class="hover:text-pink-500">
+                  <i class="fa-brands fa-facebook" style="color: #0f0f0f;"></i>
+               </a>
+               <a href="" class="hover:text-pink-500">
+                  <i class="fa-brands fa-twitter" style="color: #050505;"></i>
+               </a>
+            </div>
+         </div>
+      </div>
+   </footer>
+   <!------------------------Last Footer for laptop----------------->
+   <div class="bg-pink-800 text-sm text-center text-white p-3 mb-[70px] md:mb-[0] mt-3">
+      <h1>© 2025 Nykaa Fashion Ltd. All Rights Reserved</h1>
+   </div>
+
+   <!-----------------------Bottom Navbar Mobile Only------------------------->
+   <nav class="fixed bottom-0 left-0 right-0 bg-white border-t
+      flex justify-around items-center py-2 md:hidden z-50">
+      <div class="flex flex-col items-center text-sm text-gray-600">
+         <img src="./image/nykaa logo.png" class="w-7 h-7 rounded-[25px]" alt="Nykaa Logo" />
+         <span>Stores</span>
+      </div>
+
+      <div class="flex flex-col items-center text-sm text-gray-600">
+         <i class="fa-solid fa-table-cells-large" style="color: #930156;"></i>
+         <span>Categories</span>
+      </div>
+      <div class="flex flex-col items-center text-sm text-gray-600">
+         <i class="fa-solid fa-gift" style="color: #c0025e; font-size:20px;"></i>
+         <span>Offers</span>
+      </div>
+      <div class="flex flex-col items-center text-sm text-gray-600">
+         <i class="fa-regular fa-user" style="color: #85005b;font-size:15px;"></i>
+         <span>Account</span>
+      </div>
+   </nav>
+
+   <script>
+      /*-------------------for menubar-------------------*/
+      function openMenu() {
+         document.getElementById('sideMenu').style.left = '0';
+         document.getElementById('backdrop').classList.remove('hidden');
+      }
+
+      function closeMenu() {
+         document.getElementById('sideMenu').style.left = '-100%';
+         document.getElementById('backdrop').classList.add('hidden');
+      }
+
+      /*------------------------for check boxs-------------------*/
+      const checkboxes = document.querySelectorAll('.category');
+      const cards = document.querySelectorAll('.product-card');
+
+      checkboxes.forEach(cb => {
+         cb.addEventListener('change', () => {
+            const selected = Array.from(checkboxes)
+               .filter(c => c.checked)
+               .map(c => c.value);
+
+            cards.forEach(card => {
+               const match = selected.some(cls => card.classList.contains(cls));
+               if (selected.length === 0 || match) {
+                  card.classList.remove('hidden');
+               } else {
+                  card.classList.add('hidden');
+               }
+            });
+         });
+      });
+   </script>
+
+</body>
+
+
+</body>
+
+</html>

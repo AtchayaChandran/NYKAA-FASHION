@@ -47,16 +47,16 @@
 
       </div>
    </div>
+
    <!-----------------------Mobile NavBar------------------------------------>
    <nav>
-      <div class="nav_bar_container bg-white md:hidden fixed top-0 z-50">
-         <div class="nav_bar_inside  flex">
+      <div class="nav_bar_container bg-white md:hidden fixed top-0 z-50 mt-[-15px]">
+         <div class="nav_bar_inside  flex" onclick="openMenu()">
             <h1 class="hidden bg-pink-500 text-white text-center text-2xl p-4">Tailwind is Working</h1>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                stroke="currentColor" class="nav_bar size-7">
                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
             </svg>
-
             <img src="./image/images.png" class="nav_image">
             <div>
                <i class="fa-regular fa-heart nav_heart" style="color: #0d0d0d;font-size: 24px;"></i>
@@ -66,6 +66,7 @@
          </div>
       </div>
    </nav>
+
    <!------------------------Search Mobile--------------------------------------->
    <div class="md:hidden search_container_mobile bg-gray-200 fixed top-0 z-50">
       <div class="search_inside_mobile bg-gray-200">
@@ -73,6 +74,24 @@
          <input type="text" placeholder="Search for styles, brands & more"
             class="search_mobile_input bg-gray-200 outline-none">
       </div>
+   </div>
+
+   <!---------------------Side Menu------------------>
+   <div id="sideMenu"
+      class="fixed top-0 left-[-100%] w-[299px] h-full bg-white shadow-xl z-50 transition-all duration-500 ease-in-out">
+      <div class="p-4 flex justify-between items-center border-b">
+         <h2 class="text-xl font-bold">Categories</h2>
+         <button onclick="closeMenu()" class="text-xl">&times;</button>
+      </div>
+      <div class="p-4">
+         <!---------------------image in menu bar----------------------->
+         <img src="./image/sample.jpg" alt="Sample" class="w-full mb-4 rounded" />
+         <p class="text-gray-700">Welcome to your side menu!</p>
+      </div>
+   </div>
+
+   <!-- Backdrop (when menu opens) -->
+   <div id="backdrop" onclick="closeMenu()" class="fixed inset-0 bg-black/50 z-40 hidden">
    </div>
 
    <!------------------------Laptop Black NavBar---------------------------------------->
@@ -158,48 +177,48 @@
 
          <div class="w-[80px] md:min-w-[150px] flex-shrink-0 text-center">
             <img src="./image/f1.avif" class="w-full rounded-xl" alt="Indian Wear">
-            <p class="md:font-semibold mt-2 md:text-sm font-medium">Indianwear</p>
+            <p class="md:font-semibold md:text-sm font-medium mt-2">Indianwear</p>
          </div>
 
          <div class="w-[80px] md:min-w-[150px] flex-shrink-0 text-center">
             <img src="./image/f2.avif" class="w-full rounded-xl" alt="">
-            <p class="md:font-semibold mt-2 md:text-sm font-medium">Westernwear</p>
+            <p class="md:font-semibold md:text-sm font-medium mt-2">Westernwear</p>
          </div>
 
          <div class="w-[80px] md:min-w-[150px] flex-shrink-0 text-center">
             <img src="./image/f3.jpg" class="w-full rounded-xl" alt="">
-            <p class="md:font-semibold mt-2 md:text-sm font-medium">Footwear</p>
+            <p class="md:font-semibold md:text-sm font-medium mt-2">Footwear</p>
          </div>
 
          <div class="w-[80px] md:min-w-[150px] flex-shrink-0 text-center">
             <img src="./image/f4.avif" class="w-full rounded-xl" alt="">
-            <p class="md:font-semibold mt-2 md:text-sm font-medium">Lingerie</p>
+            <p class="md:font-semibold md:text-sm font-medium mt-2">Lingerie</p>
          </div>
 
          <div class="w-[80px] md:min-w-[150px] flex-shrink-0 text-center">
             <img src="./image/f5.jpg" class="w-full rounded-xl" alt="">
-            <p class="md:font-semibold mt-2 md:text-sm font-medium">Bags</p>
+            <p class="md:font-semibold md:text-sm font-medium mt-2">Bags</p>
          </div>
 
          <div class="w-[80px] md:min-w-[150px] flex-shrink-0 text-center">
             <img src="./image/f6.avif" class="w-full rounded-xl" alt="">
-            <p class="md:font-semibold mt-2 md:text-sm font-medium">Sports & Action</p>
+            <p class="md:font-semibold md:text-sm font-medium mt-2">Sports & Action</p>
          </div>
 
          <!----------------------------Show these only on larger screens--------------------------->
          <div class="hidden md:inline-block min-w-[150px] flex-shrink-0 text-center">
             <img src="./image/f8lap.avif" class="w-full rounded-xl md:h-[150px]" alt="">
-            <p class="md:font-semibold mt-2 md:text-sm font-medium">Watches</p>
+            <p class="md:font-semibold  md:text-sm font-medium mt-2">Watches</p>
          </div>
 
          <div class="hidden md:inline-block md:min-w-[150px] flex-shrink-0 text-center">
             <img src="./image/f7.avif" class="w-full rounded-xl md:h-[150px]" alt="">
-            <p class="md:font-semibold mt-2 md:text-sm font-medium">Jewellery</p>
+            <p class="md:font-semibold md:text-sm font-medium mt-2">Jewellery</p>
          </div>
 
          <div class="hidden md:inline-block min-w-[150px] flex-shrink-0 text-center">
             <img src="./image/f9lap.avif" class="w-full rounded-xl md:h-[150px]" alt="">
-            <p class="md:font-semibold mt-2 md:text-sm font-medium">Sunglasses</p>
+            <p class="md:font-semibold md:text-sm font-medium mt-2">Sunglasses</p>
          </div>
 
          <div class="hidden md:inline-block min-w-[150px] flex-shrink-0">
@@ -219,11 +238,10 @@
          </div>
 
          <div class="hidden md:inline-block min-w-[150px] flex-shrink-0">
-            <img src="./image/f15lap.avif" class="w-full rounded-xl md:h-[150px]" alt="">
+            <img src="./image/f15lap.avif" class="w-full rounded-xl md:h-[150px] block border" alt="">
          </div>
       </div>
    </div>
-
 
    <!-----------------------------Second Scroll----------------------->
    <div class="md:hidden text_first_scroll overflow-x-auto hide-scrollbar scroll-smooth">
@@ -346,6 +364,12 @@
       <img src="./image/ss.png">
    </div>
 
+   <!-------------------------arrow for going to----------------------------->
+   <a href="#top" class="arrow_button fixed bottom-20 right-6 p-3 bg-white text-black 
+      shadow-md hover:bg-gray-800 transition-opacity duration-300 z-50">
+      <i class="fa-solid fa-arrow-up" style="color: #050505; font-size:20px;"></i>
+   </a>
+
    <!-----------------------------Save Big scroll for mobile----------------------->
    <div class="md:hidden text_first_scroll overflow-x-auto hide-scrollbar scroll-smooth bg-yellow-50">
       <div class="flex whitespace-nowrap">
@@ -377,19 +401,19 @@
       <div class="flex whitespace-nowrap gap-2 px-3">
 
          <div class="w-[120px]  flex-shrink-0 text-center">
-            <img src="./image/rush_sale1.avif" class="w-full rounded-xl" alt="Indian Wear">
+            <img src="./image/rush_sale1.avif" class="w-full" alt="Indian Wear">
          </div>
 
          <div class="w-[120px]  flex-shrink-0 text-center">
-            <img src="./image/rush_sale2.avif" class="w-full rounded-xl" alt="">
+            <img src="./image/rush_sale2.avif" class="w-full" alt="">
          </div>
 
          <div class="w-[120px] flex-shrink-0 text-center">
-            <img src="./image/rush_sale3.avif" class="w-full rounded-xl" alt="">
+            <img src="./image/rush_sale3.avif" class="w-full" alt="">
          </div>
 
-         <div class="w-[120px] flex-shrink-0 text-center">
-            <img src="./image/rush_sale4.avif" class="w-full rounded-xl" alt="">
+         <div class="w-[134px] flex-shrink-0 text-center">
+            <img src="./image/rush_sale4.avif" class="w-full last_image" alt="">
          </div>
       </div>
    </div>
@@ -399,19 +423,19 @@
       <div class="flex whitespace-nowrap gap-2 px-3 py-3">
 
          <div class="w-[120px]  flex-shrink-0 text-center">
-            <img src="./image/rush_sale5.avif" class="w-full rounded-xl" alt="Indian Wear">
+            <img src="./image/rush_sale5.avif" class="w-full" alt="Indian Wear">
          </div>
 
          <div class="w-[120px]  flex-shrink-0 text-center">
-            <img src="./image/rush_sale6.avif" class="w-full rounded-xl" alt="">
+            <img src="./image/rush_sale6.avif" class="w-full" alt="">
          </div>
 
          <div class="w-[120px] flex-shrink-0 text-center">
-            <img src="./image/rush_sale7.avif" class="w-full rounded-xl" alt="">
+            <img src="./image/rush_sale7.avif" class="w-full" alt="">
          </div>
 
-         <div class="w-[120px] flex-shrink-0 text-center">
-            <img src="./image/rush_sale8.avif" class="w-full rounded-xl" alt="">
+         <div class="w-[134px] flex-shrink-0 text-center">
+            <img src="./image/rush_sale8.avif" class="w-full last_image" alt="">
          </div>
       </div>
    </div>
@@ -444,17 +468,17 @@
       <div class="flex whitespace-nowrap gap-2 p-2">
 
          <div class="w-[105px]  flex-shrink-0 text-center">
-            <img src="./image/hot_happening1.avif" class="w-full rounded-xl" alt="">
+            <img src="./image/hot_happening1.avif" class="w-full" alt="">
             <p class="font-medium text-sm mb-2">Min 45% off</p>
          </div>
 
          <div class="w-[105px]  flex-shrink-0 text-center">
-            <img src="./image/hot_happening2.avif" class="w-full rounded-xl" alt="">
+            <img src="./image/hot_happening2.avif" class="w-full" alt="">
             <p class="font-medium text-sm mb-2">Min 40% off</p>
          </div>
 
          <div class="w-[105px]  flex-shrink-0 text-center">
-            <img src="./image/hot_happening3.avif" class="w-full rounded-xl" alt="">
+            <img src="./image/hot_happening3.avif" class="w-full" alt="">
             <p class="font-medium text-sm mb-2">Min 40% off</p>
          </div>
       </div>
@@ -513,7 +537,7 @@
       <div class="flex whitespace-nowrap gap-3 px-6">
 
          <div class="w-[100px] flex-shrink-0 text-center">
-            <img src="./image/lables_hot1.avif" class="w-full" alt="Indian Wear">
+            <img src="./image/mobile_hot_section.avif" class="w-full" alt="Indian Wear">
             <p class="md:font-semibold mt-2 md:text-lg font-medium">Up to 60% off</p>
          </div>
 
@@ -636,29 +660,785 @@
             <img src="./image/major_price10.avif" class="w-full" alt="">
          </div>
 
-         <div class="w-[120px] md:min-w-[150px] flex-shrink-0 text-center mb-3">
-            <img src="./image/major_price11.avif" class="w-full" alt="">
+         <div class="w-[133px] md:min-w-[150px] flex-shrink-0 text-center mb-3">
+            <img src="./image/major_price11.avif" class="w-full last_image" alt="">
+         </div>
+      </div>
+   </div>
+
+   <!-------------------------------brand_slay categories for mobile view------------------------>
+   <div class="hot_happening_mobile md:hidden ">
+      <img src="./image/brand_slay.jpg">
+   </div>
+   <!----------------------Row 1 brand_slay categories for mobile view------------------------>
+   <div class="w-full flex items-center justify-center md:hidden bg-yellow-50 py-2">
+      <div class="flex whitespace-nowrap gap-2 p-2">
+
+         <div class="w-[105px]  flex-shrink-0 text-center">
+            <img src="./image/brand_slay1.jpg" class="w-full" alt="">
+            <p class="font-medium text-sm">Min 45% off</p>
+            <p class="font-light text-sm mb-2">Extra 10% off*</p>
+         </div>
+
+         <div class="w-[105px]  flex-shrink-0 text-center">
+            <img src="./image/brand_slay2.avif" class="w-full" alt="">
+            <p class="font-medium text-sm">Min 40% off</p>
+            <p class="font-light text-sm mb-2">Extra 10% off*</p>
+         </div>
+
+         <div class="w-[105px]  flex-shrink-0 text-center">
+            <img src="./image/brand_slay3.jpg" class="w-full" alt="">
+            <p class="font-medium text-sm mb-2">Min 40% off</p>
+         </div>
+      </div>
+   </div>
+
+   <!----------------------Row 2 brand_slay categories for mobile view------------------------>
+   <div class="w-full flex items-center justify-center md:hidden  bg-yellow-50">
+      <div class="flex whitespace-nowrap gap-2">
+
+         <div class="w-[105px]  flex-shrink-0 text-center">
+            <img src="./image/brand_slay4.avif" class="w-full rounded-xl" alt="">
+            <p class="font-medium text-sm">Min 40% off</p>
+            <p class="font-light text-sm mb-2">Extra 10% off*</p>
+         </div>
+
+         <div class="w-[105px]  flex-shrink-0 text-center">
+            <img src="./image/brand_slay5.avif" class="w-full rounded-xl" alt="">
+            <p class="font-medium text-sm mb-2">Min 45% off</p>
+         </div>
+
+         <div class="w-[105px]  flex-shrink-0 text-center">
+            <img src="./image/brand_slay6.jpg" class="w-full rounded-xl" alt="">
+            <p class="font-medium text-sm mb-2">Min 40% off</p>
+         </div>
+      </div>
+   </div>
+
+   <!----------------------Row 3 brand_slay categories for mobile view------------------------>
+   <div class="w-full flex items-center justify-center md:hidden  bg-yellow-50">
+      <div class="flex whitespace-nowrap gap-2 p-2 mb-2">
+
+         <div class="w-[105px]  flex-shrink-0 text-center">
+            <img src="./image/brand_slay7.jpg" class="w-full rounded-xl" alt="">
+            <p class="font-medium text-sm">Min 40% off</p>
+            <p class="font-light text-sm mb-2">Extra 10% off*</p>
+         </div>
+
+         <div class="w-[105px]  flex-shrink-0 text-center">
+            <img src="./image/brand_slay8.avif" class="w-full rounded-xl" alt="">
+            <p class="font-medium text-sm mb-2">Starting from<br>
+               ₹250</p>
+         </div>
+
+         <div class="w-[105px]  flex-shrink-0 text-center">
+            <img src="./image/brand_slay9.avif" class="w-full rounded-xl" alt="">
+            <p class="font-medium text-sm mb-2">Min 50% off</p>
+         </div>
+      </div>
+   </div>
+
+   <!----------------------Row 4 brand_slay categories for mobile view------------------------>
+   <div class="w-full flex items-center justify-center md:hidden  bg-yellow-50">
+      <div class="flex whitespace-nowrap gap-2 p-2 mb-2">
+
+         <div class="w-[105px]  flex-shrink-0 text-center">
+            <img src="./image/brand_slay10.avif" class="w-full rounded-xl" alt="">
+            <p class="font-medium text-sm mb-2">Min 40% off</p>
+         </div>
+
+         <div class="w-[105px]  flex-shrink-0 text-center">
+            <img src="./image/brand_slay11.jpg" class="w-full rounded-xl" alt="">
+            <p class="font-medium text-sm mb-2">Buy one get <br> one free</p>
+         </div>
+
+         <div class="w-[105px]  flex-shrink-0 text-center">
+            <img src="./image/brand_slay12.jpg" class="w-full rounded-xl" alt="">
+            <p class="font-medium text-sm">Min 50% off</p>
+            <p class="font-light text-sm mb-2">Extra 10% off*</p>
          </div>
       </div>
    </div>
 
 
+   <!-------------------------time ticking mobile mobile view---------------------------->
+   <div class="md:hidden">
+      <img src="./image/time_ticking.webp">
+   </div>
+   <!-------------------------time ticking mobile mobile view------------------------->
+   <div class="text_first_scroll overflow-x-auto hide-scrollbar scroll-smooth">
+      <div class="flex whitespace-nowrap gap-2 px-3 py-2 md:hidden">
 
+         <div class="w-[120px] md:min-w-[150px] flex-shrink-0">
+            <img src="./image/tt_1.jpg" class="w-full" alt="">
+         </div>
 
+         <div class="w-[120px] md:min-w-[150px] flex-shrink-0">
+            <img src="./image/tt2.jpg" class="w-full" alt="">
+         </div>
+
+         <div class="w-[120px] md:min-w-[150px] flex-shrink-0">
+            <img src="./image/tt3.jpg" class="w-full" alt="">
+         </div>
+
+         <div class="w-[120px] md:min-w-[150px] flex-shrink-0">
+            <img src="./image/tt4.jpg" class="w-full" alt="">
+         </div>
+
+         <div class="w-[120px] md:min-w-[150px] flex-shrink-0">
+            <img src="./image/tt5.jpg" class="w-full" alt="">
+         </div>
+
+         <div class="w-[133px] md:min-w-[150px] flex-shrink-0">
+            <img src="./image/tt7.jpg" class="w-full last_image" alt="">
+         </div>
+      </div>
+   </div>
+
+   <!-------------------------nykaa exclusive offer mobile---------------------------->
+   <div class="md:hidden">
+      <img src="./image/nex0ffer.jpg">
+   </div>
+   <!-------------------------nykaa exclusive offer mobile---------------------------->
+   <div class="text_first_scroll overflow-x-auto hide-scrollbar scroll-smooth bg-pink-100 md:hidden py-3">
+      <div class="flex whitespace-nowrap gap-2 px-3 py-2 md:hidden">
+
+         <div class="w-[150px] md:min-w-[150px] flex-shrink-0">
+            <img src="./image/neo1.jpg" class="w-full" alt="">
+            <p class="font-semibold text-center text-lg">Min 30% off</p>
+         </div>
+
+         <div class="w-[150px] md:min-w-[150px] flex-shrink-0">
+            <img src="./image/neo2.jpg" class="w-full" alt="">
+            <p class="font-semibold text-center text-lg">Min 60% off</p>
+         </div>
+
+         <div class="w-[150px] md:min-w-[150px] flex-shrink-0">
+            <img src="./image/neo3.jpg" class="w-full" alt="">
+            <p class="font-semibold text-center text-lg">Up to 50% off</p>
+         </div>
+
+         <div class="w-[150px] md:min-w-[150px] flex-shrink-0">
+            <img src="./image/neo4.jpg" class="w-full" alt="">
+            <p class="font-semibold text-center text-lg">Min 20% off</p>
+         </div>
+
+         <div class="w-[150px] md:min-w-[150px] flex-shrink-0">
+            <img src="./image/neo5.jpg" class="w-full" alt="">
+            <p class="font-semibold text-center text-lg">Up to 80% off</p>
+         </div>
+
+         <div class="w-[150px] md:min-w-[150px] flex-shrink-0">
+            <img src="./image/neo6.jpg" class="w-full" alt="">
+            <p class="font-semibold text-center text-lg">Up to 10% off</p>
+         </div>
+
+         <div class="w-[150px] md:min-w-[150px] flex-shrink-0">
+            <img src="./image/neo7.jpg" class="w-full" alt="">
+            <p class="font-semibold text-center text-lg">Up to 50% off</p>
+         </div>
+
+         <div class="w-[150px] md:min-w-[150px] flex-shrink-0">
+            <img src="./image/neo8.jpg" class="w-full" alt="">
+            <p class="font-semibold text-center text-lg">Min 50% off</p>
+         </div>
+
+         <div class="w-[150px] md:min-w-[150px] flex-shrink-0">
+            <img src="./image/neo9.jpg" class="w-full" alt="">
+            <p class="font-semibold text-center text-lg">Min 10% off</p>
+         </div>
+
+         <div class="w-[150px] md:min-w-[150px] flex-shrink-0">
+            <img src="./image/neo10.jpg" class="w-full" alt="">
+            <p class="font-semibold text-center text-lg">Up to 60% off</p>
+         </div>
+
+         <div class="w-[150px] md:min-w-[150px] flex-shrink-0">
+            <img src="./image/neo11.jpg" class="w-full" alt="">
+            <p class="font-semibold text-center text-lg">Up to 20% off</p>
+         </div>
+
+         <div class="w-[150px] md:min-w-[150px] flex-shrink-0">
+            <img src="./image/neo12.jpg" class="w-full" alt="">
+            <p class="font-semibold text-center text-lg">Up to 70% off</p>
+         </div>
+
+         <div class="w-[150px] md:min-w-[150px] flex-shrink-0">
+            <img src="./image/neo13.jpg" class="w-full" alt="">
+            <p class="font-semibold text-center text-lg">Min 40% off</p>
+         </div>
+
+         <div class="w-[150px] md:min-w-[150px] flex-shrink-0">
+            <img src="./image/neo15.jpg" class="w-full" alt="">
+            <p class="font-semibold text-center text-lg">Min 80% off</p>
+         </div>
+
+         <div class="w-[166px] md:min-w-[150px] flex-shrink-0">
+            <img src="./image/neo16.jpg" class="w-full last_image" alt="">
+            <p class="font-semibold text-center text-lg">Up to 30% off</p>
+         </div>
+      </div>
+   </div>
+
+   <!-------------------------Revolve bash image mobile---------------------------->
+   <div class="md:hidden mb-2">
+      <img src="./image/revelve-blash.avif">
+   </div>
+
+   <!---------------------ultimate clearance styles mobile-------------------->
+   <div class="ultimate_clearance_style md:hidden">
+      <img src="./image/ucs_top.webp">
+   </div>
+   <!---------------------Row 1 ultimate clearance styles mobile-------------------->
+   <div class="text_first_scroll overflow-x-auto hide-scrollbar scroll-smooth">
+      <div class="flex whitespace-nowrap md:hidden">
+
+         <div class="w-[120px] flex-shrink-0">
+            <img src="./image/ucs1.avif" class="w-full" alt="">
+         </div>
+
+         <div class="w-[120px] flex-shrink-0">
+            <img src="./image/ucs2.jpg" class="w-full" alt="">
+         </div>
+
+         <div class="w-[120px] flex-shrink-0">
+            <img src="./image/ucs3.jpg" class="w-full" alt="">
+         </div>
+
+         <div class="w-[120px] flex-shrink-0">
+            <img src="./image/ucs4.jpg" class="w-full" alt="">
+         </div>
+
+         <div class="w-[120px] flex-shrink-0">
+            <img src="./image/ucs5.jpg" class="w-full" alt="">
+         </div>
+
+         <div class="w-[120px] flex-shrink-0">
+            <img src="./image/ucs6.jpg" class="w-full" alt="">
+         </div>
+
+         <div class="w-[120px] flex-shrink-0">
+            <img src="./image/ucs7.jpg" class="w-full" alt="">
+         </div>
+
+         <div class="w-[120px] flex-shrink-0">
+            <img src="./image/ucs8.jpg" class="w-full" alt="">
+         </div>
+
+         <div class="w-[120px] flex-shrink-0">
+            <img src="./image/ucs9.jpg" class="w-full" alt="">
+         </div>
+      </div>
+   </div>
+   <!---------------------Row 2 ultimate clearance styles mobile-------------------->
+   <div class="text_first_scroll overflow-x-auto hide-scrollbar scroll-smooth md:hidden">
+      <div class="flex whitespace-nowrap md:hidden">
+
+         <div class="w-[120px] flex-shrink-0">
+            <img src="./image/size1.jpg" class="w-full" alt="">
+         </div>
+
+         <div class="w-[120px] flex-shrink-0">
+            <img src="./image/size2.jpg" class="w-full" alt="">
+         </div>
+
+         <div class="w-[120px] flex-shrink-0">
+            <img src="./image/size3.jpg" class="w-full" alt="">
+         </div>
+
+         <div class="w-[120px] flex-shrink-0">
+            <img src="./image/size4.jpg" class="w-full" alt="">
+         </div>
+
+         <div class="w-[120px] flex-shrink-0">
+            <img src="./image/size5.jpg" class="w-full" alt="">
+         </div>
+      </div>
+   </div>
+
+   <!-------------------girl big image mobile------------------>
+   <div class="big_girl_image_mobile md:hidden">
+      <img src="./image/it-girl-top.jpg">
+      <img src="./image/it-girl-bottom.jpg">
+   </div>
+
+   <!--------------------Raksha Bandhan mobile--------------------------->
+   <div class="raksha_top_image md:hidden">
+      <img src="./image/raksha-top.avif">
+   </div>
+   <div class="text_first_scroll overflow-x-auto hide-scrollbar scroll-smooth bg-yellow-500 mb-4">
+      <div class="flex whitespace-nowrap md:hidden">
+
+         <div class="w-[170px] md:min-w-[150px] flex-shrink-0">
+            <img src="./image/raksha-1.jpg" class="w-full" alt="">
+         </div>
+
+         <div class="w-[170px] md:min-w-[150px] flex-shrink-0">
+            <img src="./image/raksha-2.jpg" class="w-full" alt="">
+         </div>
+
+         <div class="w-[170px] md:min-w-[150px] flex-shrink-0">
+            <img src="./image/raksha-3.jpg" class="w-full" alt="">
+         </div>
+
+         <div class="w-[170px] md:min-w-[150px] flex-shrink-0">
+            <img src="./image/raksha-4.jpg" class="w-full" alt="">
+         </div>
+
+         <div class="w-[170px] md:min-w-[150px] flex-shrink-0">
+            <img src="./image/raksha-5.jpg" class="w-full" alt="">
+         </div>
+
+         <div class="w-[170px] md:min-w-[150px] flex-shrink-0">
+            <img src="./image/raksha-6.jpg" class="w-full" alt="">
+         </div>
+
+         <div class="w-[170px] md:min-w-[150px] flex-shrink-0">
+            <img src="./image/raksha-7.jpg" class="w-full" alt="">
+         </div>
+
+         <div class="w-[170px] md:min-w-[150px] flex-shrink-0">
+            <img src="./image/raksha-8.jpg" class="w-full" alt="">
+         </div>
+
+         <div class="w-[170px] md:min-w-[150px] flex-shrink-0">
+            <img src="./image/raksha-9.jpg" class="w-full" alt="">
+         </div>
+
+         <div class="w-[170px] md:min-w-[150px] flex-shrink-0">
+            <img src="./image/raksha-10.jpg" class="w-full" alt="">
+         </div>
+
+         <div class="w-[170px] md:min-w-[150px] flex-shrink-0">
+            <img src="./image/raksha-11.jpg" class="w-full" alt="">
+         </div>
+      </div>
+   </div>
+
+   <!-------------------boy big top image mobile------------------>
+   <div class="big_boy_top_image_mobile md:hidden">
+      <img src="./image/boy-big.jpg">
+   </div>
+   <!-------------------boy big image mobile------------------>
+   <div class="big_boy_image_mobile md:hidden">
+      <img src="./image/boy1.jpg">
+      <img src="./image/boy-2.jpg">
+   </div>
+
+   <!---------------------curated stored for mobile view------------->
+   <div class="curated_stores mt-2 md:hidden">
+      <img src="./image/curated_stores_top.jpg">
+   </div>
+   <!------------------Row curated stored for mobile view------------------->
+   <div class="text_first_scroll overflow-x-auto hide-scrollbar scroll-smooth mb-4">
+      <div class="flex whitespace-nowrap md:hidden">
+
+         <div class="w-[160px] md:min-w-[150px] flex-shrink-0">
+            <img src="./image/curated_stores_1.jpg" class="w-full" alt="">
+         </div>
+
+         <div class="w-[160px] md:min-w-[150px] flex-shrink-0">
+            <img src="./image/curated_stores_2.jpg" class="w-full" alt="">
+         </div>
+
+         <div class="w-[160px] md:min-w-[150px] flex-shrink-0">
+            <img src="./image/curated_stores_3.jpg" class="w-full" alt="">
+         </div>
+
+         <div class="w-[160px] md:min-w-[150px] flex-shrink-0">
+            <img src="./image/curated_stores_4.jpg" class="w-full" alt="">
+         </div>
+
+         <div class="w-[160px] md:min-w-[150px] flex-shrink-0">
+            <img src="./image/curated_stores_5.jpg" class="w-full" alt="">
+         </div>
+
+         <div class="w-[160px] md:min-w-[150px] flex-shrink-0">
+            <img src="./image/curated_stores_6.jpg" class="w-full" alt="">
+         </div>
+
+         <div class="w-[160px] md:min-w-[150px] flex-shrink-0">
+            <img src="./image/curated_stores_7.jpg" class="w-full" alt="">
+         </div>
+
+         <div class="w-[160px] md:min-w-[150px] flex-shrink-0">
+            <img src="./image/curated_stores_8.jpg" class="w-full" alt="">
+         </div>
+
+         <div class="w-[160px] md:min-w-[150px] flex-shrink-0">
+            <img src="./image/curated_stores_9.jpg" class="w-full" alt="">
+         </div>
+      </div>
+   </div>
+
+   <!----------------------oh so hot brands mobile--------------------->
+   <div class="oh_so_hot_image md:hidden">
+      <img src="./image/oh-so-hot.jpg">
+   </div>
+   <div class="oh_so_hot_image md:hidden">
+      <img src="./image/oh_so_hot_image.jpg">
+   </div>
+   <div class="oh_so_hot_image_1 md:hidden">
+      <img src="./image/oh_so_hot_image_2.jpg">
+   </div>
+
+   <!----------------------nf editmobile--------------------->
+   <div class="nf_edit md:hidden flex">
+      <img src="./image/nf_efit.avif" class="w-1/2">
+      <img src="./image/ef_girl.avif" class="w-1/2">
+   </div>
+   <div class="b_nf bg-black md:hidden">
+      <img src="image/browse_nf.avif">
+   </div>
+
+   <!------------------------Permium brand picks mobile view head image--------------------->
+   <div class="permium_mobile md:hidden mt-2">
+      <img src="./image/premium_brand_picks_tops.jpg">
+   </div>
+   <!-------------Row 1 Permium brand picks mobile view---------------->
+   <div class="Permium_text_first_scroll overflow-x-auto hide-scrollbar 
+   scroll-smooth md:hidden py-2 bg-red-100">
+      <div class="flex whitespace-nowrap gap-3 px-6">
+
+         <div class="w-[100px] flex-shrink-0 text-center">
+            <img src="./image/Permium-1.jpg" class="w-full" alt="">
+            <p class="md:font-semibold mt-2 text-sm font-medium">Up to 75% off</p>
+         </div>
+
+         <div class="w-[100px] flex-shrink-0 text-center">
+            <img src="./image/Permium2.jpg" class="w-full" alt="">
+            <p class="md:font-semibold mt-2 text-sm font-medium">Up to 35% off</p>
+         </div>
+
+         <div class="w-[100px] flex-shrink-0 text-center">
+            <img src="./image/Permium3.jpg" class="w-full" alt="">
+            <p class="md:font-semibold mt-2 text-sm font-medium">Up to 10% off</p>
+         </div>
+      </div>
+   </div>
+
+   <!-------------Row 2 Permium brand picks mobile view---------------->
+   <div class="Permium_text_first_scroll overflow-x-auto hide-scrollbar 
+   scroll-smooth md:hidden py-2 bg-red-100">
+      <div class="flex whitespace-nowrap gap-3 px-6">
+
+         <div class="w-[100px] flex-shrink-0 text-center">
+            <img src="./image/Permium4.jpg" class="w-full" alt="">
+            <p class="md:font-semibold mt-2 text-sm font-medium">min 30% off</p>
+         </div>
+
+         <div class="w-[100px] flex-shrink-0 text-center">
+            <img src="./image/Permium5.jpg" class="w-full" alt="">
+            <p class="md:font-semibold mt-2 text-sm font-medium">Up to 65% off</p>
+         </div>
+
+         <div class="w-[100px] flex-shrink-0 text-center">
+            <img src="./image/Permium6.jpg" class="w-full" alt="">
+            <p class="md:font-semibold mt-2 text-sm font-medium">Up to 50% off</p>
+         </div>
+      </div>
+   </div>
+
+   <!-------------Row 3 Permium brand picks mobile view---------------->
+   <div class="Permium_text_first_scroll overflow-x-auto hide-scrollbar 
+   scroll-smooth md:hidden py-2 bg-red-100 mb-3">
+      <div class="flex whitespace-nowrap gap-3 px-6">
+
+         <div class="w-[100px] flex-shrink-0 text-center">
+            <img src="./image/Permium7.jpg" class="w-full" alt="">
+            <p class="md:font-semibold mt-2 text-sm font-medium">Up to 70% off</p>
+         </div>
+
+         <div class="w-[100px] flex-shrink-0 text-center">
+            <img src="./image/Permium8.jpg" class="w-full" alt="">
+            <p class="md:font-semibold mt-2 text-sm font-medium">min 85% off</p>
+         </div>
+
+         <div class="w-[100px] flex-shrink-0 text-center">
+            <img src="./image/Permium9.jpg" class="w-full" alt="">
+            <p class="md:font-semibold mt-2 text-sm font-medium">Up to 55% off</p>
+         </div>
+      </div>
+   </div>
+
+   <!------------------------express shipping mobile image--------------------->
+   <div class="hot_lable_mobile md:hidden">
+      <img src="./image/exship.webp">
+   </div>
+
+   <!-------------------------bag deal mobile------------------------->
+   <div class="text_first_scroll overflow-x-auto hide-scrollbar scroll-smooth mt-3">
+      <div class="flex whitespace-nowrap gap-4 px-4 py-2 md:hidden">
+
+         <div class="w-[120px] md:min-w-[150px] flex-shrink-0 text-left shadow-md">
+            <img src="./image/bag-1.jpg" class="w-full" alt="">
+            <p class="p-2 text-[15px]">Shop Now</p>
+         </div>
+
+         <div class="w-[120px] md:min-w-[150px] flex-shrink-0 text-left shadow-md">
+            <img src="./image/bag-2.jpg" class="w-full" alt="">
+            <p class="p-2 text-[15px]">min 30% off</p>
+         </div>
+
+         <div class="w-[120px] md:min-w-[150px] flex-shrink-0 text-left shadow-md">
+            <img src="./image/bag-3.jpg" class="w-full" alt="">
+            <p class="p-2 text-[15px]">Up to 30% off</p>
+         </div>
+
+         <div class="w-[120px] md:min-w-[150px] flex-shrink-0 text-left shadow-md">
+            <img src="./image/bag-4.jpg" class="w-full" alt="">
+            <p class="p-2 text-[15px]">Up to 40% off</p>
+         </div>
+
+         <div class="w-[120px] md:min-w-[150px] flex-shrink-0 text-left shadow-md">
+            <img src="./image/bag-5.jpg" class="w-full" alt="">
+            <p class="p-2 text-[15px]">Up to 50% off</p>
+         </div>
+
+         <div class="w-[120px] md:min-w-[150px] flex-shrink-0 text-left shadow-md">
+            <img src="./image/bag-6.jpg" class="w-full" alt="">
+            <p class="p-2 text-[15px]">min 30% off</p>
+         </div>
+
+         <div class="w-[120px] md:min-w-[150px] flex-shrink-0 text-left shadow-md">
+            <img src="./image/bag-7.jpg" class="w-full" alt="">
+            <p class="p-2 text-[15px]">Up to 50% off</p>
+         </div>
+
+         <div class="w-[120px] md:min-w-[150px] flex-shrink-0 text-left shadow-md">
+            <img src="./image/bag-8.jpg" class="w-full" alt="">
+            <p class="p-2 text-[15px]">Up to 30% off</p>
+         </div>
+
+         <div class="w-[120px] md:min-w-[150px] flex-shrink-0 text-left shadow-md">
+            <img src="./image/bag-9.jpg" class="w-full" alt="">
+            <p class="p-2 text-[15px]">Up to 50% off</p>
+         </div>
+
+         <div class="w-[120px] md:min-w-[150px] flex-shrink-0 text-left shadow-md">
+            <img src="./image/bag-10.jpg" class="w-full" alt="">
+            <p class="p-2 text-[15px]">Up to 50% off</p>
+         </div>
+
+         <div class="w-[133px] md:min-w-[150px] flex-shrink-0 text-left shadow-md">
+            <img src="./image/bag-11.jpg" class="w-full last_image" alt="">
+            <p class="p-2 text-[15px]">min 40% off</p>
+         </div>
+      </div>
+   </div>
+
+   <!-------------------------deals on jewellery mobile------------------------->
+   <div class="text_first_scroll overflow-x-auto hide-scrollbar scroll-smooth mb-5">
+      <div class="flex whitespace-nowrap gap-4 px-4 py-2 md:hidden">
+
+         <div class="w-[120px] md:min-w-[150px] flex-shrink-0 text-left shadow-md">
+            <img src="./image/j1.jpg" class="w-full" alt="">
+            <p class="p-2 text-[15px]">Shop Now</p>
+         </div>
+
+         <div class="w-[120px] md:min-w-[150px] flex-shrink-0 text-left shadow-md">
+            <img src="./image/j2.jpg" class="w-full" alt="">
+            <p class="p-2 text-[15px]">min 10% off</p>
+         </div>
+
+         <div class="w-[120px] md:min-w-[150px] flex-shrink-0 text-left shadow-md">
+            <img src="./image/j3.jpg" class="w-full" alt="">
+            <p class="p-2 text-[15px]">min 75% off</p>
+         </div>
+
+         <div class="w-[120px] md:min-w-[150px] flex-shrink-0 text-left shadow-md">
+            <img src="./image/j4.jpg" class="w-full" alt="">
+            <p class="p-2 text-[15px]">Up to 15% off</p>
+         </div>
+
+         <div class="w-[120px] md:min-w-[150px] flex-shrink-0 text-left shadow-md">
+            <img src="./image/j5.jpg" class="w-full" alt="">
+            <p class="p-2 text-[15px]">Up to 60% off</p>
+         </div>
+
+         <div class="w-[120px] md:min-w-[150px] flex-shrink-0 text-left shadow-md">
+            <img src="./image/j6.jpg" class="w-full" alt="">
+            <p class="p-2 text-[15px]">min 78% off</p>
+         </div>
+
+         <div class="w-[120px] md:min-w-[150px] flex-shrink-0 text-left shadow-md">
+            <img src="./image/j7.jpg" class="w-full" alt="">
+            <p class="p-2 text-[15px]">Up to 60% off</p>
+         </div>
+
+         <div class="w-[120px] md:min-w-[150px] flex-shrink-0 text-left shadow-md">
+            <img src="./image/j8.jpg" class="w-full" alt="">
+            <p class="p-2 text-[15px]">Up to 25% off</p>
+         </div>
+
+         <div class="w-[120px] md:min-w-[150px] flex-shrink-0 text-left shadow-md">
+            <img src="./image/j9.jpg" class="w-full" alt="">
+            <p class="p-2 text-[15px]">Up to 55% off</p>
+         </div>
+
+         <div class="w-[120px] md:min-w-[150px] flex-shrink-0 text-left shadow-md">
+            <img src="./image/j10.jpg" class="w-full" alt="">
+            <p class="p-2 text-[15px]">Up to 85% off</p>
+         </div>
+
+         <div class="w-[133px] md:min-w-[150px] flex-shrink-0 text-left shadow-md">
+            <img src="./image/j11.jpg" class="w-full last_image" alt="">
+            <p class="p-2 text-[15px]">min 30% off</p>
+         </div>
+      </div>
+   </div>
+
+   <!----------------------festival home finds mobile view--------------------------->
+   <div class="md:hidden">
+      <img src="./image/festival_home_finds.jpg">
+   </div>
+
+   <!-------------------------deals on watches------------------------->
+   <div class="text_first_scroll overflow-x-auto hide-scrollbar scroll-smooth mt-3">
+      <div class="flex whitespace-nowrap gap-4 px-4 py-2 md:hidden">
+
+         <div class="w-[120px] md:min-w-[150px] flex-shrink-0 text-left shadow-md">
+            <img src="./image/deals_on_watch1.avif" class="w-full" alt="">
+            <p class="p-2 text-[15px]">Shop Now</p>
+         </div>
+
+         <div class="w-[120px] md:min-w-[150px] flex-shrink-0 text-left shadow-md">
+            <img src="./image/deals_on_watch2.avif" class="w-full" alt="">
+            <p class="p-2 text-[15px]">min 30% off</p>
+         </div>
+
+         <div class="w-[120px] md:min-w-[150px] flex-shrink-0 text-left shadow-md">
+            <img src="./image/deals_on_watch3.avif" class="w-full" alt="">
+            <p class="p-2 text-[15px]">Up to 30% off</p>
+         </div>
+
+         <div class="w-[120px] md:min-w-[150px] flex-shrink-0 text-left shadow-md">
+            <img src="./image/deals_on_watch4.avif" class="w-full" alt="">
+            <p class="p-2 text-[15px]">Up to 40% off</p>
+         </div>
+
+         <div class="w-[120px] md:min-w-[150px] flex-shrink-0 text-left shadow-md">
+            <img src="./image/deals_on_watch5.jpg" class="w-full" alt="">
+            <p class="p-2 text-[15px]">Up to 50% off</p>
+         </div>
+
+         <div class="w-[120px] md:min-w-[150px] flex-shrink-0 text-left shadow-md">
+            <img src="./image/deals_on_watch6.avif" class="w-full" alt="">
+            <p class="p-2 text-[15px]">min 30% off</p>
+         </div>
+
+         <div class="w-[120px] md:min-w-[150px] flex-shrink-0 text-left shadow-md">
+            <img src="./image/deals_on_watch7.avif" class="w-full" alt="">
+            <p class="p-2 text-[15px]">Up to 50% off</p>
+         </div>
+
+         <div class="w-[133px] md:min-w-[150px] flex-shrink-0 text-left shadow-md">
+            <img src="./image/deals_on_watch8.avif" class="w-full last_image" alt="">
+            <p class="p-2 text-[15px]">min 40% off</p>
+         </div>
+      </div>
+   </div>
+
+   <!-------------------------deals on sunglasses------------------------->
+   <div class="text_first_scroll overflow-x-auto hide-scrollbar scroll-smooth mb-[25px]">
+      <div class="flex whitespace-nowrap gap-4 px-4 py-2 md:hidden">
+
+         <div class="w-[120px] md:min-w-[150px] flex-shrink-0 text-left shadow-md">
+            <img src="./image/sunglasses_1.avif" class="w-full" alt="">
+            <p class="p-2 text-[15px]">Shop Now</p>
+         </div>
+
+         <div class="w-[120px] md:min-w-[150px] flex-shrink-0 text-left shadow-md">
+            <img src="./image/sunglasses_2.avif" class="w-full" alt="">
+            <p class="p-2 text-[15px]">min 30% off</p>
+         </div>
+
+         <div class="w-[120px] md:min-w-[150px] flex-shrink-0 text-left shadow-md">
+            <img src="./image/sunglasses_3.avif" class="w-full" alt="">
+            <p class="p-2 text-[15px]">min 15% off</p>
+         </div>
+
+         <div class="w-[120px] md:min-w-[150px] flex-shrink-0 text-left shadow-md">
+            <img src="./image/sunglasses_4.jpg" class="w-full" alt="">
+            <p class="p-2 text-[15px]">Up to 25% off</p>
+         </div>
+
+         <div class="w-[120px] md:min-w-[150px] flex-shrink-0 text-left shadow-md">
+            <img src="./image/sunglasses_5.jpg" class="w-full" alt="">
+            <p class="p-2 text-[15px]">Up to 60% off</p>
+         </div>
+
+         <div class="w-[120px] md:min-w-[150px] flex-shrink-0 text-left shadow-md">
+            <img src="./image/sunglasses_6.jpg" class="w-full" alt="">
+            <p class="p-2 text-[15px]">min 78% off</p>
+         </div>
+
+         <div class="w-[120px] md:min-w-[150px] flex-shrink-0 text-left shadow-md">
+            <img src="./image/sunglasses_7.avif" class="w-full" alt="">
+            <p class="p-2 text-[15px]">Up to 77% off</p>
+         </div>
+
+         <div class="w-[120px] md:min-w-[150px] flex-shrink-0 text-left shadow-md">
+            <img src="./image/sunglasses_8.avif" class="w-full" alt="">
+            <p class="p-2 text-[15px]">Up to 25% off</p>
+         </div>
+
+         <div class="w-[133px] md:min-w-[150px] flex-shrink-0 text-left shadow-md">
+            <img src="./image/sunglasses_9.avif" class="w-full last_image" alt="">
+            <p class="p-2 text-[15px]">min 71% off</p>
+         </div>
+      </div>
+   </div>
+
+   <!--------------Latest indian fasion image for mobile view---------------->
+   <div class="latest_indian_mobile md:hidden mt-3">
+      <img src="./image/mobile_Latest.avif">
+   </div>
+
+   <!--------------stores to explaore mobile------------->
+   <div class="stors_to_explore md:hidden mt-3">
+      <img src="./image/store_mobile.avif">
+   </div>
+   <!--------------------stores to explaore inside categories mobile------------------>
+   <div class="w-full flex items-center justify-center md:hidden">
+      <div class="flex whitespace-nowrap gap-2 p-2">
+
+         <div class="w-[80px]  flex-shrink-0 text-center">
+            <img src="./image/store_mobile1.avif" class="w-full rounded-xl" alt="">
+            <p class="font-medium text-sm mb-2">Women</p>
+         </div>
+
+         <div class="w-[80px]  flex-shrink-0 text-center">
+            <img src="./image/store_mobile2.avif" class="w-full rounded-xl" alt="">
+            <p class="font-medium text-sm mb-2">Men</p>
+         </div>
+
+         <div class="w-[80px]  flex-shrink-0 text-center">
+            <img src="./image/store_mobile3.jpg" class="w-full rounded-xl" alt="">
+            <p class="font-medium text-sm mb-2">Kids</p>
+         </div>
+
+         <div class="w-[80px]  flex-shrink-0 text-center">
+            <img src="./image/store_mobile4.avif" class="w-full rounded-xl" alt="">
+            <p class="font-medium text-sm mb-2">Home</p>
+         </div>
+
+      </div>
+   </div>
 
    <!----------------------hot & Happening categories for laptop view------------------------>
-   <div class="hidden md:flex mt-2 bg-red-100 px-8">
+   <div class="hot_laptop_happening">
+      <div class="hidden md:flex bg-red-100 px-8 mt-[-105px]">
+         <h1 class="hot_laptop">HOT & HAPPENING CATEGORIES</h1>
+      </div>
 
-      <h1 class="hot_laptop">HOT & HAPPENING CATEGORIES</h1>
+      <div class="hot_laptop_second_para hidden md:flex bg-red-100 px-8">
+         <h1 class="hot_laptop_sec">Style steals you can’t resist</h1>
+      </div>
    </div>
-
-   <div class="hot_laptop_second_para hidden md:flex bg-red-100 px-8">
-      <h1 class="hot_laptop_sec">Style steals you can’t resist</h1>
-   </div>
-
-   <div class="text_first_scroll overflow-x-auto hide-scrollbar 
+   <div class="text_first_scrolls overflow-x-auto hide-scrollbar 
    scroll-smooth hidden md:flex bg-red-100 py-4">
-      <div class="flex whitespace-nowrap gap-2 px-8 py-2">
+      <div class="flex whitespace-nowrap gap-2 px-8">
 
          <div class="md:w-[200px] flex-shrink-0 text-center">
             <img src="./image/hot_happening1.avif" class="w-full rounded-xl" alt="Indian Wear">
@@ -710,6 +1490,7 @@
    <div class="hot_laptop_second_para hidden md:flex bg-pink-50 px-8">
       <h1 class="hot_laptop_sec">On never-seen-before offers</h1>
    </div>
+
    <div class="text_first_scroll overflow-x-auto hide-scrollbar 
    scroll-smooth hidden md:flex bg-pink-50 py-4">
       <div class="flex whitespace-nowrap gap-6 px-8 py-2">
@@ -900,9 +1681,11 @@
    <div class="hidden md:flex px-14">
       <h1 class="hot_laptop">OUR STORES</h1>
    </div>
+
    <div class="hot_laptop_second_para hidden md:flex px-14">
       <h1 class="our_laptop_sec font-semibold">Find everything for your every need</h1>
    </div>
+
    <div class="text_first_scroll overflow-x-auto hide-scrollbar 
    scroll-smooth hidden md:flex py-3">
       <div class="flex whitespace-nowrap gap-6 px-14 py-2">
@@ -954,63 +1737,24 @@
       </div>
    </div>
 
-   <!--------------Latest indian fasion image for mobile view---------------->
-   <div class="latest_indian_mobile md:hidden">
-      <img src="./image/mobile_Latest.avif">
-   </div>
-
-   <!--------------stores to explaore------------->
-   <div class="stors_to_explore md:hidden mt-3">
-      <img src="./image/store_mobile.avif">
-   </div>
-   <!--------------------stores to explaore inside categories------------------>
-   <div class="w-full flex items-center justify-center md:hidden">
-      <div class="flex whitespace-nowrap gap-2 p-2">
-
-         <div class="w-[80px]  flex-shrink-0 text-center">
-            <img src="./image/store_mobile1.avif" class="w-full rounded-xl" alt="">
-            <p class="font-medium text-sm mb-2">Women</p>
-         </div>
-
-         <div class="w-[80px]  flex-shrink-0 text-center">
-            <img src="./image/store_mobile2.avif" class="w-full rounded-xl" alt="">
-            <p class="font-medium text-sm mb-2">Men</p>
-         </div>
-
-         <div class="w-[80px]  flex-shrink-0 text-center">
-            <img src="./image/store_mobile3.jpg" class="w-full rounded-xl" alt="">
-            <p class="font-medium text-sm mb-2">Kids</p>
-         </div>
-
-         <div class="w-[80px]  flex-shrink-0 text-center">
-            <img src="./image/store_mobile4.avif" class="w-full rounded-xl" alt="">
-            <p class="font-medium text-sm mb-2">Home</p>
-         </div>
-
-      </div>
-   </div>
-
-
-   <!-----------------------------------mobile view nkkaa--------------------------------------------------->
+   <!-----------------------------------Fraud mobile view nkkaa--------------------------------------------------->
    <div class="mobile_view_nykaa md:hidden mt-3">
       <img src="./image/mv_nykaaa.jpg">
       <p class="mobile_view_nykaa_b"></p>
    </div>
+
    <!---------------------------fraud info laptop view------------------------------>
    <div class="fraud_section md:flex justify-center mb-6 hidden">
       <img src="./image/fraud_info.avif" class="fraud_sec_img">
    </div>
+
 
    <!-------------------------------Nykaa Fashion – Online Shopping Website----------------------->
    <button onclick="toggleNykaaSection()" class="block md:hidden font-semibold focus:outline-none focus:ring-0
    text-pink-900 underline my-4 [text-underline-offset:10px]">
       Read More About Nykaa Fashion
    </button>
-   <!-------------------------arrow for going to----------------------------->
-   <a href="#top" class="arrow_button fixed bottom-6 right-6 p-3 bg-white text-black 
-      shadow-md hover:bg-gray-800 transition-opacity duration-300 z-50">
-      ↑
-   </a>
+
    <!--------------------id for js connect for toggle--------------------->
    <div id="nykaaContent" class="hidden md:block max-h-[75vh] overflow-y-auto pr-2">
 
@@ -1388,7 +2132,7 @@
       </div>
    </footer>
 
-   <!------------------2nf Footer laptop view---------------------->
+   <!------------------2nd Footer laptop view---------------------->
    <footer class="bg-white px-6 py-10 text-sm text-gray-700">
       <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-8">
 
@@ -1481,12 +2225,31 @@
    </footer>
 
    <!------------------------Last Footer for laptop----------------->
-   <div class="bg-pink-800 text-sm text-center text-white p-3">
+   <div class="bg-pink-800 text-sm text-center text-white p-3 mb-[70px] md:mb-[0]">
       <h1>© 2025 Nykaa Fashion Ltd. All Rights Reserved</h1>
    </div>
 
+   <!-----------------------Bottom Navbar Mobile Only------------------------->
+   <nav class="fixed bottom-0 left-0 right-0 bg-white border-t
+      flex justify-around items-center py-2 md:hidden z-50">
+      <div class="flex flex-col items-center text-sm text-gray-600">
+         <img src="./image/nykaa logo.png" class="w-7 h-7 rounded-[25px]" alt="Nykaa Logo" />
+         <span>Stores</span>
+      </div>
 
-
+      <div class="flex flex-col items-center text-sm text-gray-600">
+         <i class="fa-solid fa-table-cells-large" style="color: #930156;"></i>
+         <span>Categories</span>
+      </div>
+      <div class="flex flex-col items-center text-sm text-gray-600">
+         <i class="fa-solid fa-gift" style="color: #c0025e; font-size:20px;"></i>
+         <span>Offers</span>
+      </div>
+      <div class="flex flex-col items-center text-sm text-gray-600">
+         <i class="fa-regular fa-user" style="color: #85005b;font-size:15px;"></i>
+         <span>Account</span>
+      </div>
+   </nav>
 
    <script src="script.js"></script>
 </body>
