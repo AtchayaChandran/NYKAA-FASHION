@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>Nykaa Fashion-Online Shoping</title>
+   <link rel="icon" type="image/png" href="./image/nykaa logo.png">
+   <!-------FONT AWESOME LINK-------->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <!---------CSS STYLE SHEET LINK--------->
+   <link rel="stylesheet" href="style.css">
+   <!------Tailwind CSS-------->
+   <script src="https://cdn.tailwindcss.com"></script>
+   <!--------Google Fonts---------->
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+   <!-----------------Bootstarp-------------------->
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"></script>
+</head>
+
+<body class="bg-gray-100">
+
+   <!---------------------------------Laptop NavBar------------------------------------>
+   <nav>
+      <div class="laptop_navbar_container hidden md:flex">
+         <div class="laptop_inside_section flex fixed top-0 z-50 bg-white">
+            <img src="./image/logolap.png" class="lap_logo_img">
+            <a class="hover:underline  hover:text-pink-900 font-semibold text-lg text-gray-800 [text-underline-offset:20px]"
+               href="women.html">Women</a>
+            <a class="hover:underline hover:text-pink-900 font-semibold text-lg text-gray-800 [text-underline-offset:20px]"
+               href="men.html">Men</a>
+            <a class="hover:underline hover:text-pink-900 font-semibold text-lg text-gray-800 [text-underline-offset:20px]"
+               href="kid.html">Kids</a>
+            <a class="hover:underline hover:text-pink-900 font-semibold text-lg text-gray-800 [text-underline-offset:20px]"
+               href="index.html">Home</a>
+            <a class="hover:underline hover:text-pink-900 font-semibold text-lg text-gray-800 [text-underline-offset:20px]"
+               href="categorie.html">Explore All</a>
+            <a class="hover:underline hover:text-pink-900 font-semibold text-lg text-gray-800 [text-underline-offset:20px]"
+               href="about.html">About</a>
+
+            <!--------------------------------Search for laptop---------------------------->
+            <div class="search_laptop_container bg-gray-100 font-awesome flex">
+               <i class="fa-solid fa-magnifying-glass mt-1" style="color: #939292;"></i>
+               <input type="text" placeholder="Search for styles, brands & more"
+                  class="bg-gray-100 outline-none search_input_laptop">
+               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                  <path d="M12 9a3.75 3.75 0 1 0 0 7.5A3.75 3.75 0 0 0 12 9Z" />
+                  <path fill-rule="evenodd"
+                     d="M9.344 3.071a49.52 49.52 0 0 1 5.312 0c.967.052 1.83.585 2.332 1.39l.821 1.317c.24.383.645.643 1.11.71.386.054.77.113 1.152.177 1.432.239 2.429 1.493 2.429 2.909V18a3 3 0 0 1-3 3h-15a3 3 0 0 1-3-3V9.574c0-1.416.997-2.67 2.429-2.909.382-.064.766-.123 1.151-.178a1.56 1.56 0 0 0 1.11-.71l.822-1.315a2.942 2.942 0 0 1 2.332-1.39ZM6.75 12.75a5.25 5.25 0 1 1 10.5 0 5.25 5.25 0 0 1-10.5 0Zm12-1.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z"
+                     clip-rule="evenodd" />
+               </svg>
+            </div>
+
+            <!-----------------------Account & wishlist & cart for Laptop--------------------->
+            <div class="account_container px-5 flex font-semibold">
+               <p class="account">
+                  <i class="fa-regular fa-user px-2" style="color: #0d0d0d;"></i>
+                  Account
+               </p>
+               <p class="wish_list">
+                  <i class="fa-regular fa-heart px-2" style="color: #050505;"></i>
+                  Wishlist
+               </p>
+               <p class="cart flex">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                     <path fill-rule="evenodd"
+                        d="M7.5 6v.75H5.513c-.96 0-1.764.724-1.865 1.679l-1.263 12A1.875 1.875 0 0 0 4.25 22.5h15.5a1.875 1.875 0 0 0 1.865-2.071l-1.263-12a1.875 1.875 0 0 0-1.865-1.679H16.5V6a4.5 4.5 0 1 0-9 0ZM12 3a3 3 0 0 0-3 3v.75h6V6a3 3 0 0 0-3-3Zm-3 8.25a3 3 0 1 0 6 0v-.75a.75.75 0 0 1 1.5 0v.75a4.5 4.5 0 1 1-9 0v-.75a.75.75 0 0 1 1.5 0v.75Z"
+                        clip-rule="evenodd" />
+                  </svg>Cart
+               </p>
+            </div>
+         </div>
+      </div>
+   </nav>
+
+   <!--------------------id for js connect for toggle--------------------->
+   <div id="nykaaContent" class="hidden md:block max-h-[75vh] overflow-y-auto pr-2 mt-[100px]">
+
+      <div class="nykaa_fashion_section text-left">
+
+         <div class="inside_nykaa_fashion">
+            <h1 class="nykaa_head font-bold mb-3">
+               Nykaa Fashion – Online Shopping Website
+            </h1>
+            <h1 class="nykaa_head_sec font-semibold mb-3">
+               GADGETS & TECH ACCESSORIES
+            </h1>
+            <p class="nykaa_para font-light mb-3">
+               Your quest for the best gadgets and accessories ends at Nykaa Fashion. While we keep ourselves a step
+               ahead
+               when it comes to fashion, we also bring you the very best from the world of gadgets, tech accessories,
+               and
+               more. After all, they do play a role in uplifting your overall style!
+            </p>
+            <p class="nykaa_para font-light mb-3">
+               From innovative gadgets and gizmos to tech gear and accessories, discover everything you will ever need
+               to
+               boost your productivity and style.
+            </p>
+
+            <h1 class="nykaa_head_sec font-semibold mb-3">
+               Cameras and Accessories
+            </h1>
+            <p class="nykaa_para font-light mb-3">
+               If you have a flair for photography, it's about time you get a camera! Check out a range ofCameras and
+               Accessorieslike tripods and LED rings to take your photography to the next level. You will find tons of
+               options in terms of features, price, and more.
+            </p>
+
+            <h1 class="nykaa_head_sec font-semibold mb-3">
+               Smartwatches
+            </h1>
+            <p class="nykaa_para font-light mb-3">
+               Think it's time to add those amazing apps and notifications on your wrist? It's time to invest in a
+               Smartwatch! And what better place to find one than on Nykaa Fashion which brings you stylish smartwatches
+               with all the top features. Explore a wide range of offerings from savvy brands likeFossil,
+               Oppo,Fitbit,Pebble, and more. You will also find plenty of options in Sports Watches,Fitness Trackers,
+               Dress
+               Watches, and more.
+            </p>
+
+            <h1 class="nykaa_head_sec font-semibold mb-3">
+               Smartphone Cases & Covers
+            </h1>
+            <p class="nykaa_para font-light mb-3">
+               At Nykaa Fashion, you will always find plenty ofCases and Coversto keep your smartphone safe, stylish or
+               both. They are available in various styles and materials ranging from Metal, Leather, Rubber, Plastic,
+               Glass, and more. Apart from mobile cases, you will findLaptops Covers, Tablet Covers, Headphone Covers,
+               Watch Bands, and more. Get these from top brands like Apple, Samsung, and OnePlus, Realme, other popular
+               names such asChumbak,Macmerise, Na-Kd, andMvyno
+            </p>
+
+            <h1 class="nykaa_head_sec font-semibold mb-3">
+               Speakers
+            </h1>
+            <p class="nykaa_para font-light mb-3">
+               If you are still on the lookout for the perfectSpeakersthat suit your audiophile needs and fit your
+               budget,
+               you are guaranteed to find them at Nykaa Fashion. From global brands likeJBLand Amazon to top Indian
+               players
+               such asBoat,Portronics, andFingers, there's a wide range of brands to choose from - be it for home media
+               systems or your car.
+            </p>
+
+            <h1 class="nykaa_head_sec font-semibold mb-3">
+               Headphones
+            </h1>
+            <p class="nykaa_para font-light mb-3">
+               If you're bored of your old headphones and planning to buy one that truly rocks, look no further! At
+               Nykaa
+               Fashion, you will find almost every type ofHeadphonefor your needs. Available in various designs, sizes,
+               and
+               connectivity types, findBluetooth Headphones,True Wireless Headphones, Wireless on Ear Headphones,
+               Wireless
+               Over the Ear Headphones, and more from popular brands likeBoult Audio,Skullcandy, JBL, Boat, andHammer,
+               among others.
+            </p>
+
+            <h1 class="nykaa_head_sec font-semibold mb-3">
+               Power Banks And Chargers
+            </h1>
+            <p class="nykaa_para font-light mb-3">
+               Keep your smartphones, tablets and other media devices always topped up with the best Chargers and power
+               banks. At Nykaa Fashion, you will find multi-functional chargers with various connectivity options like
+               USB,
+               Firewire, Wireless, USB-C, and Wi-Fi from top brands.
+
+               If you have the perfect charger at home, you might need a power bank for when you're on the go. Choose
+               from
+               a range of options for your smartphone, tablet, Mp3 player or digital camera with capacity going up from
+               5000mAh to 27000mAh.
+            </p>
+            <p class="nykaa_para font-light mb-3">
+               If you have the perfect charger at home, you might need a power bank for when you're on the go. Choose
+               from
+               a range of options for your smartphone, tablet, Mp3 player or digital camera with capacity going up from
+               5000mAh to 27000mAh.
+            </p>
+
+            <h1 class="nykaa_head_sec font-semibold mb-3">
+               HOME DECOR
+            </h1>
+            <p class="nykaa_para font-light mb-3">
+               Create a home of your dreams with Nykaa Fashion. Whatever your needs and desires, find everything you're
+               looking for and discover things you never knew you needed to take your space to a stylish new level!
+               Explore
+               top home décor brands and get inspired by an incredible range of products including designerBed
+               Sheets,Photo
+               Frames,Mirrors,Indoor Planters,Curtains,Blankets,Pillows,Carpets and Rugs,Lamps, and more.
+            </p>
+
+            <h1 class="nykaa_head_sec font-semibold mb-3">
+               Wall Decor
+            </h1>
+            <p class="nykaa_para font-light mb-3">
+               A well-stated wall gives that perfect finishing touch to your home. Nykaa Fashion brings you the
+               classiestWall Décoritems from popular brands likeExclusiveLane,The Artment,HomeTown,
+               Chumbak,Ellementry,The
+               Décor Remedy, and many more to jazz up the walls.
+            </p>
+
+            <h1 class="nykaa_head_sec font-semibold mb-3">
+               Bedding
+            </h1>
+            <p class="nykaa_para font-light mb-3">
+               Ready to make your bedroom a stylish paradise? You definitely need to explore the vast collection of
+               bedding
+               products available at Nykaa Fashion. Get everything ranging from Bed sheets, Blankets, Pillows,Pillow
+               Covers,Cushion Covers, and all you can possibly think of from brands
+               likeD'Decor,Spaces,Maspar,Swayam,Dreams,Pure Home + Living, and more.
+            </p>
+
+            <h1 class="nykaa_head_sec font-semibold mb-3">
+               Kitchen & Dining
+            </h1>
+            <p class="nykaa_para font-light mb-3">
+               At Nykaa Fashion,Kitchen and Dining Essentialsare all about making your hosting nights easier with the
+               finest quality essentials likeDinnerware,Serveware,Cutlery,Table Accessories,Lunch EssentialsandKitchen
+               Appliances. Whether you are starting fresh or updating your supplies, you will find everything that a
+               modern
+               kitchen needs. Explore the widest range of offerings from reputed brands likeWonderchef, Ritu Kumar,
+               Ellementry, ExclusiveLane,Nestasia, Chumbak and more.
+            </p>
+
+            <h1 class="nykaa_head_sec font-semibold mb-3">
+               NYKAA FASHION LUXE
+            </h1>
+            <p class="nykaa_para font-light mb-3">
+               If you desire a bit of luxury in life and wish to take your style game up a notch, we bring youNykaa
+               Fashion
+               Luxe– a segment that offers head-turning styles and statement accessories to all luxury connoisseurs
+               including Men, Women, and Kids. Think of popular designer brands and local hidden gems with dedicated
+               offerings ranging from luxe watches, apparel, bags, footwear and more.
+            </p>
+
+            <h1 class="nykaa_head_sec font-semibold mb-3">
+               Luxe for Men
+            </h1>
+            <p class="nykaa_para font-light mb-3">
+               Find everything from men's apparel and Watches to bags and personal accessories – all made with supreme
+               quality fabrics and materials for a strong style statement.
+            </p>
+            <p class="nykaa_para font-light mb-3">
+               Brands to keep an eye on:Urvashi Kaur, Wendell Rodricks,Echke, Carte Blanche, andZeppelinamong others.
+            </p>
+
+            <h1 class="nykaa_head_sec font-semibold mb-3">
+               Luxe for Kids
+            </h1>
+            <p class="nykaa_para font-light mb-3">
+               Nykaa Fashion Luxe also offers a range of premium quality styles for your little ones – both boys and
+               girls.
+               Explore kids' Indian and western wear styles, sleepwear, and infant accessories.
+            </p>
+            <p class="nykaa_para font-light mb-3">
+               Brands to keep an eye on:Stokke,Little Luxury, Pastito A Pastito,Ps Kids By Payal Singhaland more
+            </p>
+
+            <h1 class="nykaa_head_sec font-semibold mb-3">
+               HIDDEN GEMS
+            </h1>
+            <p class="nykaa_para font-light mb-3">
+               Nykaa Fashion brings youHidden Gems– a curation of niche home grown labels that are deeply rooted in
+               Indian
+               craftsmanship and offer pieces that are mindfully handmade by local artisans. These niche labels stay
+               true
+               to the ethos of hidden gems by interpreting modern fashion trends and advancing craft techniques, giving
+               birth to the most exquisite creations that you will find only on Nykaa Fashion.
+            </p>
+            <p class="nykaa_para font-light mb-3">
+               The hidden gems curation presents labels from across the country, offering a beautiful mix of traditional
+               and contemporary fashion. FromLabel Shaurya Sanadhya,Nuhh, andRozana JaipurtoSwtantra,Baise Gaba,
+               andGulaboo
+               Jaipur, discover young and vibrant labels that champion modern Indian design.
+            </p>
+            <p class="nykaa_para font-light mb-3">
+               Look out for Indian staples like salwar suits, sarees, kurtas, and lehengas or experiment with a range of
+               fusion separates. Indigenous craftsmanship and age-old techniques of embroidery, stitching and weaving
+               have
+               a much-deserved moment in these creations. Apart from apparel, the hidden gems category also offers a
+               range
+               of accessories, jewellery, footwear, bags and more. You will find pieces for every occasion such as
+               Festive,
+               Casual,Formal,Semi-Formal, Wedding, and others.
+            </p>
+
+            <h1 class="nykaa_head_sec font-semibold mb-3">
+               STYLE INSPIRATION - LATEST FASHION TRENDS
+            </h1>
+            <p class="nykaa_para font-light mb-3">
+               From traditional Indian wear to contemporary and into-western wear, Nykaa Fashion brings you the latest
+               in
+               fashion in an array of styles. While there are plenty of trends to look out for, the world of fashion is
+               greatly inspired by comfortable clothing.
+            </p>
+            <p class="nykaa_para font-light mb-3">
+               Comfortable clothing has become a trend itself and it is certainly here to stay. Nykaa Fashion has a
+               special
+               Minimal Utility collection from Twenty Dresses that offers a winning combination of style and comfort. So
+               get ready for the ease of movement while being your stylish best in dresses made from breathable fabrics
+               with the finest details and soothing hues.
+            </p>
+            <p class="nykaa_para font-light mb-3">
+               If you're looking for Celebrity-Inspired Styles that will have you turning heads, check out the latest
+               designs fromMasabaon Nykaa Fashion that have been a huge hit among Bollywood celebs. Known for its
+               whimsical, bright prints and fusion wear designs, the label will be your go-to for big events.
+            </p>
+
+            <h1 class="nykaa_head_sec font-semibold mb-3">
+               SUSTAINABILITY & NYKAA
+            </h1>
+            <p class="nykaa_para font-light mb-3">
+               Nykaa Fashion is making every effort to bring sustainable fashion into the limelight through its special
+               edit -The Responsible Collection. It features a mix of sustainability-focused labels from both popular
+               and
+               upcoming labels. These carefully curated brands represent the advocates of sustainable fashion that focus
+               on
+               using organic materials, recycled products, and upcycled products for sustainable development.
+            </p>
+            <p class="nykaa_para font-light mb-3">
+               Nykaa Fashion also uses a special 'responsible' tag for products that engage in sustainable practices. We
+               also deliver 90% of our orders in eco friendly packaging made from recyclable paper flyers.
+            </p>
+            <p class="nykaa_para font-light mb-3">
+               Sustainable labels worth checking out: Chumbak, NA-KD,Diwaah,Kicks And Crawl,Cavallo By Linen
+               Club,Charukriti,Ed-A-Mamma,Khara Kapas,Monk & MeiandPaio.
+            </p>
+         </div>
+      </div>
+   </div>
+   </footer>
+
+   <!-------------------------------Foot side download our app mobile view------------------------------->
+   <div class="download_our_app md:hidden">
+      <img src="./image/mobile_app_download.jpg">
+   </div>
+
+   <!----------------------mobile view 1ST Footer--------------------->
+   <footer class="bg-gray-100 text-black py-8 px-4 md:hidden">
+      <div class="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+         <!-----------------------Column 1---------------------->
+         <div>
+            <h3 class="font-bold text-xl mb-2">Who are we</h3>
+            <ul class="space-y-1 text-sm text-black">
+               <li><a href="">About Us</a></li>
+               <li><a href="">Careers</a></li>
+               <li><a href="">Press</a></li>
+            </ul>
+         </div>
+
+         <!---------------------------Column 2--------------------------->
+         <div>
+            <h3 class="font-bold text-xl mb-2">Help</h3>
+            <ul class="space-y-1 text-sm text-black">
+               <li><a href="">Shipping & Return Policy</a></li>
+               <li><a href="">Help Center</a></li>
+               <li><a href="">Terms & Conditions</a></li>
+            </ul>
+         </div>
+
+         <!----------------------Column 3---------------------->
+         <div>
+            <h3 class="font-bold text-xl mb-2">More</h3>
+            <ul class="space-y-1 text-sm text-black">
+               <li><a href="">Privacy Policy</a></li>
+               <li><a href="">Sell on Nykaa Fashion</a></li>
+            </ul>
+         </div>
+
+         <!---------------------Column 4---------------------------->
+         <div>
+            <h3 class="font-bold text-xl mb-2">Quick Links</h3>
+            <ul class="space-y-1 text-sm text-black">
+               <li><a href="">Offers</a></li>
+               <li><a href="">Sitemap</a></li>
+               <li><a href="">Style Files</a></li>
+            </ul>
+         </div>
+
+         <!----------------------Column 5------------------>
+         <div>
+            <h3 class="font-bold text-xl mb-2">Follow Us</h3>
+            <div class="flex space-x-4">
+               <a href="" class="hover:text-pink-500">
+                  <i class="fa-brands fa-instagram"></i>
+               </a>
+               <a href="" class="hover:text-pink-500">
+                  <i class="fa-brands fa-facebook"></i>
+               </a>
+               <a href="" class="hover:text-pink-500">
+                  <i class="fa-brands fa-twitter"></i>
+               </a>
+            </div>
+         </div>
+      </div>
+   </footer>
+
+   <!-------------------------------Foot side download our app laptop view------------------------------->
+   <div class="download_our_app hidden md:flex">
+      <img src="./image/foot-side.png">
+   </div>
+
+   <!---------------------1st Footer laptop view------------------------->
+   <footer class="bg-gray-100 text-black py-8 px-4 hidden md:flex">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+         <div>
+            <h3 class="font-bold text-xl mb-2">Who are we</h3>
+            <ul class="space-y-1 text-sm text-black">
+               <li><a href="">About Us</a></li>
+               <li><a href="">Careers</a></li>
+               <li><a href="">Press</a></li>
+            </ul>
+
+         </div>
+         <div>
+            <h3 class="font-bold text-xl mb-2">Help</h3>
+            <ul class="space-y-1 text-sm text-black">
+               <li><a href="">Shipping & Return Policy</a></li>
+               <li><a href="">Help Center</a></li>
+               <li><a href="">Terms & Conditions</a></li>
+            </ul>
+         </div>
+         <div>
+            <h3 class="font-bold mb-2 mt-5"></h3>
+            <ul class="space-y-1 text-sm text-black">
+               <li><a href="">Privacy Policy</a></li>
+               <li><a href="">Sell on Nykaa Fashion</a></li>
+            </ul>
+         </div>
+         <div>
+            <h3 class="font-bold mb-2">Quick Links</h3>
+            <p class="text-sm text-black">offers</p>
+            <p class="text-sm text-black">Sitemap</p>
+            <p class="text-sm text-black">Style Files</p>
+         </div>
+         <div>
+            <h3 class="font-bold mb-2">Follow Us</h3>
+            <div class="flex space-x-4">
+               <a href="" class="hover:text-pink-500">
+                  <i class="fa-brands fa-instagram" style="color: #0d0d0d;"></i>
+               </a>
+               <a href="" class="hover:text-pink-500">
+                  <i class="fa-brands fa-facebook" style="color: #0f0f0f;"></i>
+               </a>
+               <a href="" class="hover:text-pink-500">
+                  <i class="fa-brands fa-twitter" style="color: #050505;"></i>
+               </a>
+            </div>
+         </div>
+      </div>
+   </footer>
+
+   <!------------------2nd Footer laptop view---------------------->
+   <footer class="bg-white px-6 py-10 text-sm text-gray-700">
+      <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-8">
+
+         <!------------Column 1------------------------>
+         <div>
+            <h3 class="font-semibold mb-3">WOMEN</h3>
+            <ul class="space-y-1">
+               <li>Women's Indianwear</li>
+               <li>Women's Westernwear</li>
+               <li>Bags</li>
+               <li>Women's Footwear</li>
+               <li>Women's Jewellery</li>
+               <li>Lingerie</li>
+               <li>Women's Sportswear</li>
+               <li>Women's Sleep & lounge</li>
+               <li>Women's Watches</li>
+               <li>Fashion Accessories</li>
+            </ul>
+         </div>
+
+         <!--------------------Column 2---------------------------->
+         <div>
+            <h3 class="font-semibold mb-3">MEN</h3>
+            <ul class="space-y-1">
+               <li>Topwear</li>
+               <li>Bottomwear</li>
+               <li>Ethnicwear</li>
+               <li>Men's Footwear</li>
+               <li>Men's Accessories</li>
+               <li>Innerwear & Sleepwear</li>
+               <li>Men's Watches</li>
+               <li>Bags & Backpacks</li>
+               <li>Athleisure</li>
+               <li>Sports & Fitness</li>
+            </ul>
+         </div>
+
+         <!---------------------Column 3---------------------->
+         <div>
+            <h3 class="font-semibold mb-3">KIDS</h3>
+            <ul class="space-y-1">
+               <li>Kids Indianwear</li>
+               <li>Kids Westernwear</li>
+               <li>Kids Footwear</li>
+               <li>Kids Jewellery</li>
+               <li>Feeding</li>
+               <li>Kids Sportswear</li>
+               <li>Kids Sleepwear</li>
+               <li>Kids Accessories</li>
+               <li>Toys & Games</li>
+               <li>Innerwear</li>
+            </ul>
+         </div>
+
+         <!-----------------------Column 4----------------------->
+         <div>
+            <h3 class="font-semibold mb-3">LUXE</h3>
+            <ul class="space-y-1">
+               <li>Luxury Ethnic Wear</li>
+               <li>Luxury Westernwear</li>
+               <li>Luxury Footwear</li>
+               <li>Luxury Bags</li>
+               <li>Luxury Accessories</li>
+               <li>Luxury Watches</li>
+               <li>Luxury Home</li>
+               <li>Luxury Jewellery</li>
+               <li>Summer Collection</li>
+               <li>Luxury Dresses</li>
+            </ul>
+         </div>
+
+         <!-------------------------Column 5--------------------------->
+         <div>
+            <h3 class="font-semibold mb-3">TOP BRANDS</h3>
+            <ul class="space-y-1">
+               <li>Puma</li>
+               <li>Vero Moda</li>
+               <li>W</li>
+               <li>Biba</li>
+               <li>Forever New</li>
+               <li>Skechers</li>
+               <li>Fablestreet</li>
+               <li>Only</li>
+               <li>Autumnlane</li>
+               <li>Cider</li>
+               <li>Accessorize London</li>
+            </ul>
+         </div>
+      </div>
+   </footer>
+
+   <!------------------------Last Footer for laptop----------------->
+   <div class="bg-pink-800 text-sm text-center text-white p-3 md:mb-[0]">
+      <h1>© 2025 Nykaa Fashion Ltd. All Rights Reserved</h1>
+   </div>
+</body>
+
+</html>
