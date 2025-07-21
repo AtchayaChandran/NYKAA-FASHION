@@ -34,5 +34,5 @@ The main focus of this project was to:
 - **Vanilla JavaScript**
 - **Boostrap**
 
-🌐 Live Demo[]
+🌐 Live Demo[https://atchayachandran.github.io/NYKAA-FASHION/]
 
